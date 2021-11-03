@@ -1,0 +1,15 @@
+name: data_viz_workshop
+channels:
+    - conda-forge
+dependencies: 
+    - python=3.8
+    - bokeh=2.3.3
+    - ffmpeg=4.2.2
+    - jupyterlab=3.1.1
+    - matplotlib=3.4.3
+    - numpy=1.21.2
+    - pandas=1.3.2
+    - seaborn=0.11.2
+    - pyviz::geoviews-core=1.9.1
+    - pyviz::geoviews=1.9.1
+    - pyviz::holoviews=1.14.5
