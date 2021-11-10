@@ -39,19 +39,19 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
 3. Create and activate a conda virtual environment (on Windows, these commands should be run in **Anaconda Prompt**):
 
-```shell
-$ cd python-data-viz-workshop
-~/python-data-viz-workshop$ conda install mamba -n base -c conda-forge
-~/python-data-viz-workshop$ mamba env create --file environment.yml
-~/python-data-viz-workshop$ conda activate data_viz_workshop
-(data_viz_workshop) ~/python-data-viz-workshop$
-```
+    ```shell
+    $ cd python-data-viz-workshop
+    ~/python-data-viz-workshop$ conda install mamba -n base -c conda-forge
+    ~/python-data-viz-workshop$ mamba env create --file environment.yml
+    ~/python-data-viz-workshop$ conda activate data_viz_workshop
+    (data_viz_workshop) ~/python-data-viz-workshop$
+    ```
 
 4. Launch JupyterLab:
 
-```shell
-(data_viz_workshop) ~/python-data-viz-workshop$ jupyter lab
-```
+    ```shell
+    (data_viz_workshop) ~/python-data-viz-workshop$ jupyter lab
+    ```
 
 5. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
