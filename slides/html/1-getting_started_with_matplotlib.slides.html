@@ -14309,7 +14309,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Source: Stack Exchange Network</em></p>
+<p><em>Source: <a href="https://api.stackexchange.com/docs/search">Stack Exchange Network</a></em></p>
 
 </div>
 </div></section><section>
@@ -14446,7 +14446,7 @@ div.jp-OutputPrompt {
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Matplotlib-basics">Matplotlib basics<a class="anchor-link" href="#Matplotlib-basics">&#182;</a></h2><p>In this workshop, we will explore the static, animated, and interactive functionality to gain a breadth of knowledge of the library. While we won't go too in depth, additional resources will be provided throughout. Now, let's get started with the basics.</p>
+<h2 id="Matplotlib-basics">Matplotlib basics<a class="anchor-link" href="#Matplotlib-basics">&#182;</a></h2><p>In this workshop, we will explore the static and animated functionality to gain a breadth of knowledge of the library. While we won't go too in depth, additional resources will be provided throughout. Now, let's get started with the basics.</p>
 <div style="text-align: center;">
 <img width="400" src="https://images.unsplash.com/photo-1602027438676-ad64751bdbc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80" alt="Herd mentality: flock of Sheep Southland New Zealand">
 </div>
@@ -14638,7 +14638,7 @@ div.jp-OutputPrompt {
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># this can also be done with pandas</span>
 
-<span class="c1"># remove some of the spines (must be done with Matplotlib)</span>
+<span class="c1"># hide some of the spines (must be done with Matplotlib)</span>
 <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -15102,7 +15102,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f938d627ee0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7ff4eb4577f0&gt;]</pre>
 </div>
 
 </div>
@@ -15166,7 +15166,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PolyCollection at 0x7f9396519190&gt;</pre>
+<pre>&lt;matplotlib.collections.PolyCollection at 0x7ff4f4b8d220&gt;</pre>
 </div>
 
 </div>
@@ -15344,7 +15344,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f93963ca310&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7ff4ea9c93a0&gt;]</pre>
 </div>
 
 </div>
@@ -15465,7 +15465,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f9390b1f760&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7ff4eea025b0&gt;]</pre>
 </div>
 
 </div>
@@ -15689,7 +15689,7 @@ div.jp-OutputPrompt {
 <h4 id="5.-Format-both-the-x--and-y-axis-tick-labels.">5. Format both the x- and y-axis tick labels.<a class="anchor-link" href="#5.-Format-both-the-x--and-y-axis-tick-labels.">&#182;</a></h4><p>All that remains now is to clean up the tick labels on the axes: the x-axis should have human-readable dates and the y-axis can be improved by formatting the numbers for readability. For both, we will need to access the <code>Axis</code> objects contained in the <code>Axes</code> object via the <code>xaxis</code>/<code>yaxis</code> attribute:</p>
 
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span> <span class="c1"># access the x-axis</span>
@@ -15697,13 +15697,13 @@ div.jp-OutputPrompt {
 </pre></div>
 
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>From there, we will use two methods to customize the <em>major</em> tick labels (as opposed to <em>minor</em>, which our plot isn't currently showing). We call the <code>set_major_locator()</code> method to adjust where the ticks are located, and the <code>set_major_formatter()</code> to adjust the format of the tick labels. For the x-axis, we will place ticks at 16-month intervals and format the labels as <code>%b\n%Y</code>, which places the month abbreviation above the year. This functionality comes from the <code>matplotlib.dates</code> module:</p>
 
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">MonthLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">16</span><span class="p">))</span>
@@ -15711,13 +15711,13 @@ div.jp-OutputPrompt {
 </pre></div>
 
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>matplotlib.ticker</code> module contains classes for tick location and formatting for non-dates. Here, we use the <code>StrMethodFormatter</code> class to provide a format string just as we would see with the <code>str.format()</code> method. This particular format specifies that the labels should be floats with commas as the thousands separator and zero digits after the decimal.</p>
+<p>The <code>matplotlib.ticker</code> module contains classes for tick location and formatting for non-dates. Here, we use the <code>StrMethodFormatter</code> class to provide a format string just as we would see with the <code>str.format()</code> method. This particular format specifies that the labels should be floats with commas as the thousands separator and zero digits after the decimal:</p>
 
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">ticker</span>
@@ -15726,7 +15726,7 @@ div.jp-OutputPrompt {
 </pre></div>
 
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now, let's put everything together in a function:</p>
@@ -15827,7 +15827,7 @@ div.jp-OutputPrompt {
 </div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Area-plot">Area plot<a class="anchor-link" href="#Area-plot">&#182;</a></h3><p>We have just been using the Matplotlib questions time series, but it's also interesting to look at trends for multiple libraries. Since the libraries in this dataset vary in age, popularity, and number of Stack Overflow questions, a good option to view many at once is an area plot. This will give us an idea of both the overall trend for these types of libraries and the libraries themselves. Let's start by subsetting our monthly Stack Overflow questions data to the top four libraries by number of questions:</p>
+<h3 id="Area-plot">Area plot<a class="anchor-link" href="#Area-plot">&#182;</a></h3><p>We have just been using the Matplotlib questions time series, but it's also interesting to look at trends for multiple libraries. Since the libraries in this dataset vary in age, popularity, and number of Stack Overflow questions, a good option to view many at once is an area plot. This will give us an idea of both the overall trend for these types of libraries and the libraries themselves. Let's start by subsetting our daily Stack Overflow questions data to the top four libraries by number of questions:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15987,10 +15987,10 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.collections.PolyCollection at 0x7f938cf97130&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x7f9394d2f160&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x7f938d87dd30&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x7f938d8910a0&gt;]</pre>
+<pre>[&lt;matplotlib.collections.PolyCollection at 0x7ff4eb67c6a0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x7ff4eb67c9a0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x7ff4eb67cd00&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x7ff4eb67cfd0&gt;]</pre>
 </div>
 
 </div>
@@ -16390,7 +16390,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.lines.Line2D at 0x7f938ea56d00&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x7ff4ecaccf70&gt;</pre>
 </div>
 
 </div>
@@ -17335,13 +17335,13 @@ dtype: float64</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stacked_bars</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">libraries</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
 
     <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">library</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">labels</span><span class="p">,</span> <span class="n">library</span><span class="p">]</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">)</span>
-        <span class="n">last</span> <span class="o">+=</span> <span class="n">data</span>
+    <span class="k">for</span> <span class="n">library</span> <span class="ow">in</span> <span class="n">libraries</span><span class="p">:</span>
+        <span class="n">co_occurring_library</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">library</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">libraries</span><span class="p">,</span> <span class="n">co_occurring_library</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">)</span>
+        <span class="n">last</span> <span class="o">+=</span> <span class="n">co_occurring_library</span>
     
     <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">despine</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
@@ -17432,7 +17432,7 @@ dtype: float64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x7f938f6ba8e0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7ff4ed7835b0&gt;</pre>
 </div>
 
 </div>
@@ -17519,13 +17519,13 @@ dtype: float64</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stacked_bars</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">libraries</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
 
     <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">library</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">labels</span><span class="p">,</span> <span class="n">library</span><span class="p">]</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">)</span>
-        <span class="n">last</span> <span class="o">+=</span> <span class="n">data</span>
+    <span class="k">for</span> <span class="n">library</span> <span class="ow">in</span> <span class="n">libraries</span><span class="p">:</span>
+        <span class="n">co_occurring_library</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">library</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">libraries</span><span class="p">,</span> <span class="n">co_occurring_library</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">)</span>
+        <span class="n">last</span> <span class="o">+=</span> <span class="n">co_occurring_library</span>
     
     <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">,</span> <span class="n">framealpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -17704,13 +17704,16 @@ dtype: float64</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stacked_bars</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">libraries</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span>
 
     <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">library</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">co_occur</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">labels</span><span class="p">,</span> <span class="n">library</span><span class="p">]</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-        <span class="n">last</span> <span class="o">+=</span> <span class="n">data</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">library</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">libraries</span><span class="p">):</span>
+        <span class="n">co_occurring_library</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">library</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+            <span class="n">libraries</span><span class="p">,</span> <span class="n">co_occurring_library</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="n">library</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">last</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">last</span> <span class="o">+=</span> <span class="n">co_occurring_library</span>
     
     <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">,</span> <span class="n">framealpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
