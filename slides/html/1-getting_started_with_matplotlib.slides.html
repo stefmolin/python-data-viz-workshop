@@ -14889,7 +14889,7 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We are going to visualize how the rolling 30-day average number of Matplotlib questions changed over time, along with the standard deviation. To do so, we first need to calculate these data points using pandas:</p>
+<p>We are going to visualize how the rolling 30-day mean number of Matplotlib questions changed over time, along with the standard deviation. To do so, we first need to calculate these data points using pandas:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16133,7 +16133,7 @@ div.jp-OutputPrompt {
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We will annotate pandas, NumPy and Matplotlib alongside their areas, but seaborn will be moved higher up and to the right using an arrow to point to its area (since it is thin). Once again, we will place this logic in a function for reuse later:</p>
+<p>We will annotate pandas, NumPy and Matplotlib alongside their respective areas, but seaborn will be moved higher up and to the right using an arrow to point to its area (since it is thin). Once again, we will place this logic in a function for reuse later:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17054,7 +17054,7 @@ dtype: int64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Stacked-bar-plot">Stacked bar plot<a class="anchor-link" href="#Stacked-bar-plot">&#182;</a></h4><p>For the next few examples, we will be creating a stacked bar plot showing co-occurrences of the library tags. This gives us an idea of relationships between the libraries and how people use them. Converting the original dataset into the adjacency matrix we will need for these visualizations is not important for this training, so we will just read in a file with the adjacency matrix; however, those interested in the code behind this can find it in the <a href="../data/collection/stackoverflow.ipynb">stackoverflow.ipynb</a> notebook.</p>
+<h3 id="Stacked-bar-plot">Stacked bar plot<a class="anchor-link" href="#Stacked-bar-plot">&#182;</a></h3><p>For the next few examples, we will be creating a stacked bar plot showing co-occurrences of the library tags. This gives us an idea of relationships between the libraries and how people use them. Converting the original dataset into the adjacency matrix we will need for these visualizations is not important for this training, so we will just read in a file with the adjacency matrix; however, those interested in the code behind this can find it in the <a href="../data/collection/stackoverflow.ipynb">stackoverflow.ipynb</a> notebook.</p>
 
 </div>
 </div></section><section>
@@ -17324,7 +17324,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="1.-Create-the-stacked-bar-plot.">1. Create the stacked bar plot.<a class="anchor-link" href="#1.-Create-the-stacked-bar-plot.">&#182;</a></h5><p>To make our stacked bar plot, we can still use the <code>barh()</code> method; however, we have to make multiple calls to it, each time specifying where the starting point should be (i.e., the end of the previous portion of the bar). We will package this logic up in a function:</p>
+<h4 id="1.-Create-the-stacked-bar-plot.">1. Create the stacked bar plot.<a class="anchor-link" href="#1.-Create-the-stacked-bar-plot.">&#182;</a></h4><p>To make our stacked bar plot, we can still use the <code>barh()</code> method; however, we have to make multiple calls to it, each time specifying where the starting point should be (i.e., the end of the previous portion of the bar). We will package this logic up in a function:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -17400,7 +17400,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="2.-Add-the-legend.">2. Add the legend.<a class="anchor-link" href="#2.-Add-the-legend.">&#182;</a></h5><p>Next, we add a legend to understand what the colors mean:</p>
+<h4 id="2.-Add-the-legend.">2. Add the legend.<a class="anchor-link" href="#2.-Add-the-legend.">&#182;</a></h4><p>Next, we add a legend to understand what the colors mean:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17460,7 +17460,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="3.-Label-and-format-the-plot.">3. Label and format the plot.<a class="anchor-link" href="#3.-Label-and-format-the-plot.">&#182;</a></h5><p>Then, we label our x-axis and set the limits of the x-axis (<code>xlim</code>) so that it goes from 0% to 100%. We also use <code>ticker.PercentFormatter</code> to display our x-axis tick labels as percentages. Note that we passed in <code>xmax=1</code> when instantiating it because our data already contains percentages, but passing in the maximum value in the data will calculate the percentages:</p>
+<h4 id="3.-Label-and-format-the-plot.">3. Label and format the plot.<a class="anchor-link" href="#3.-Label-and-format-the-plot.">&#182;</a></h4><p>Then, we label our x-axis and set the limits of the x-axis (<code>xlim</code>) so that it goes from 0% to 100%. We also use <code>ticker.PercentFormatter</code> to display our x-axis tick labels as percentages. Note that we passed in <code>xmax=1</code> when instantiating it because our data already contains percentages, but passing in the maximum value in the data will calculate the percentages:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17542,7 +17542,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="4.-Annotate-the-bars.">4. Annotate the bars.<a class="anchor-link" href="#4.-Annotate-the-bars.">&#182;</a></h5><p>As with the previous example, we annotate our bars after accessing each via the <code>patches</code> attribute on the <code>Axes</code> object. However, this time we only label bars whose values surpass a threshold &ndash; note that the value of a bar here is its width:</p>
+<h4 id="4.-Annotate-the-bars.">4. Annotate the bars.<a class="anchor-link" href="#4.-Annotate-the-bars.">&#182;</a></h4><p>As with the previous example, we annotate our bars after accessing each via the <code>patches</code> attribute on the <code>Axes</code> object. However, this time we only label bars whose values surpass a threshold &ndash; note that the value of a bar here is its width:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17601,7 +17601,7 @@ dtype: float64</pre>
 </div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="5.-Change-the-color-scheme.">5. Change the color scheme.<a class="anchor-link" href="#5.-Change-the-color-scheme.">&#182;</a></h5><p>Throughout this workshop, we have been using default colormaps. For this visualization, we will take a look at how to change the colormap. Note that this is only one way of working with colormaps.</p>
+<h4 id="5.-Change-the-color-scheme.">5. Change the color scheme.<a class="anchor-link" href="#5.-Change-the-color-scheme.">&#182;</a></h4><p>Throughout this workshop, we have been using default colormaps. For this visualization, we will take a look at how to change the colormap. Note that this is only one way of working with colormaps.</p>
 
 </div>
 </div></section><section>
@@ -17783,7 +17783,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Histogram">Histogram<a class="anchor-link" href="#Histogram">&#182;</a></h3><p>We will now be switching to a different dataset for the final two plot types that we will be discussing. The new dataset we will be working with contains NYC subway entrances and exits per borough per day for 2017-2021. It was resampled from <a href="https://www.kaggle.com/eddeng/nyc-subway-traffic-data-20172021?select=NYC_subway_traffic_2017-2021.csv">this</a> Kaggle dataset created through some extensive data wrangling by Kaggle user <a href="https://www.kaggle.com/eddeng">Edden</a>. Our dataset that looks like this:</p>
+<h3 id="Histogram">Histogram<a class="anchor-link" href="#Histogram">&#182;</a></h3><p>We will now be switching to a different dataset for the final two plot types that we will be discussing. The new dataset we will be working with contains NYC subway entrances and exits per borough per day for 2017-2021. It was resampled from <a href="https://www.kaggle.com/eddeng/nyc-subway-traffic-data-20172021?select=NYC_subway_traffic_2017-2021.csv">this</a> Kaggle dataset created through some extensive data wrangling by Kaggle user <a href="https://www.kaggle.com/eddeng">Edden</a>. Our dataset looks like this:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -18174,7 +18174,7 @@ dtype: float64</pre>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Tip: When iterating over layouts with multiple rows and columns (e.g., a 2x2 layout), you can call the <code>flatten()</code> method on the NumPy ndarray of <code>Axes</code> objects before iterating over them to go one by one rather than row by row.</em></p>
+<p><em>Tip: When iterating over layouts with multiple rows and columns (e.g., a 2x2 layout), call the <code>flatten()</code> method on the NumPy ndarray of <code>Axes</code> objects to iterate over the <code>Axes</code> objects one by one rather than row by row.</em></p>
 
 </div>
 </div></div></section><section>
