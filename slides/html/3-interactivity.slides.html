@@ -14124,7 +14124,7 @@ div.jp-OutputPrompt {
 <h2 id="Adding-tooltips-and-sliders">Adding tooltips and sliders<a class="anchor-link" href="#Adding-tooltips-and-sliders">&#182;</a></h2><p>For our first foray into interactive visualizations, we will recreate the earthquake map from the previous section. However, this time, we will make it possible to select the month using a slider, zoom in on the map, and view additional information on each earthquake with tooltips.</p>
 
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>To make this visualization, we will work through the following steps:</p>
@@ -14136,7 +14136,7 @@ div.jp-OutputPrompt {
 </ol>
 
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="1.-Read-in-and-prepare-the-data.">1. Read in and prepare the data.<a class="anchor-link" href="#1.-Read-in-and-prepare-the-data.">&#182;</a></h3><p>As we did in the previous section, we will use GeoPandas to read in our dataset. We are once again creating a new column for the month, but this time, we are also dropping any columns with missing information:</p>
@@ -14309,9 +14309,9 @@ div.jp-OutputPrompt {
 
 
 
-<div id="339422e3-ac6a-4e81-8136-3b50d74ac29b" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="7f9350c4-55a3-4599-ab0b-18e5d04a262a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('339422e3-ac6a-4e81-8136-3b50d74ac29b');
+var element = document.getElementById('7f9350c4-55a3-4599-ab0b-18e5d04a262a');
 
 (function(root) {
   function now() {
@@ -15537,9 +15537,9 @@ var element = document.getElementById('339422e3-ac6a-4e81-8136-3b50d74ac29b');
 
 
 
-<div id="339422e3-ac6a-4e81-8136-3b50d74ac29b" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="7f9350c4-55a3-4599-ab0b-18e5d04a262a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('339422e3-ac6a-4e81-8136-3b50d74ac29b');
+var element = document.getElementById('7f9350c4-55a3-4599-ab0b-18e5d04a262a');
 
 if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
   window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
@@ -16290,14 +16290,14 @@ roTBs2RqAAAAAElFTkSuQmCC'
 <h2 id="Additional-plot-types">Additional plot types<a class="anchor-link" href="#Additional-plot-types">&#182;</a></h2><p>So far, we've seen how easy it is to make interactive visualizations with the Bokeh backend, but another benefit of using HoloViz is the ability to easily make a variety of plots that may require significant effort to create from scratch (e.g., <a href="http://holoviews.org/user_guide/Network_Graphs.html">network/graph diagrams</a>, <a href="http://holoviews.org/reference/elements/bokeh/HeatMap.html#elements-bokeh-gallery-heatmap">heatmaps</a>, <a href="http://holoviews.org/reference/elements/bokeh/Chord.html#elements-bokeh-gallery-chord">chord diagrams</a>, and <a href="http://holoviews.org/reference/elements/bokeh/Sankey.html#elements-bokeh-gallery-sankey">Sankey plots</a>). In this section, we will see how to create a chord diagram and a Sankey plot in just a few lines of code using the HoloViews library directly.</p>
 
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div style="text-align: center;">
     <img src="https://raw.githubusercontent.com/stefmolin/python-data-viz-workshop/main/media/sankey_and_chord.png">
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We will be working with a new dataset for these examples: 2019 flight statistics from the United States Department of Transportation’s Bureau of Transportation Statistics. The <a href="https://www.transtats.bts.gov/DL_SelectFields.asp?gnoyr_VQ=FMF&amp;QO_fu146_anzr=Nv4%20Pn44vr45">dataset</a> contains 321,409 rows and 41 columns. Here, we read it in and perform some initial processing on it for our visualizations:</p>
@@ -17215,14 +17215,11 @@ Name: passengers, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">carrier_to_route_edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
-    <span class="n">get_edges</span><span class="p">(</span>
-        <span class="n">domestic_passenger_travel</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;unique_carrier_name == &quot;</span><span class="si">{</span><span class="n">carrier</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">),</span>
-        <span class="n">source_col</span><span class="o">=</span><span class="s1">&#39;unique_carrier_name&#39;</span><span class="p">,</span>
-        <span class="n">target_col</span><span class="o">=</span><span class="s1">&#39;route&#39;</span>
-    <span class="p">)</span>
-    <span class="k">for</span> <span class="n">carrier</span> <span class="ow">in</span> <span class="n">carrier_edges</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">carrier_to_route_edges</span> <span class="o">=</span> <span class="n">get_edges</span><span class="p">(</span>
+    <span class="n">domestic_passenger_travel</span><span class="p">,</span>
+    <span class="n">source_col</span><span class="o">=</span><span class="s1">&#39;unique_carrier_name&#39;</span><span class="p">,</span>
+    <span class="n">target_col</span><span class="o">=</span><span class="s1">&#39;route&#39;</span>
+<span class="p">)</span>
 
 <span class="n">carrier_to_route_edges</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -17430,7 +17427,7 @@ Name: passengers, dtype: float64</pre>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><p>This section provided an introduction to interactive plotting with HoloViz using the Bokeh backend. We saw that the hvPlot interface is very similar to how we plot with pandas, so it is a great way to get used to HoloViz. Let's take a 10-minute break for some exercises using hvPlot to check your understanding:</p>
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><p>This section provided an introduction to interactive plotting with HoloViz using the Bokeh backend. We saw that the hvPlot interface is very similar to how we plot with pandas, so it is a great way to get used to HoloViz. Let's take a 7-minute break for some exercises using hvPlot to check your understanding:</p>
 <ol>
 <li>For the 10 carriers that transported the most freight, create a bar plot showing total freight transported per carrier. </li>
 <li>Create a line plot of total earthquakes per day with tooltips.</li>
@@ -17456,11 +17453,11 @@ Name: passengers, dtype: float64</pre>
     <span class="n">carrier</span><span class="o">=</span><span class="s1">&#39;@unique_carrier_name&#39;</span><span class="p">,</span> <span class="n">freight</span><span class="o">=</span><span class="s1">&#39;@freight</span><span class="si">{0.00}</span><span class="s1"> B&#39;</span>
 <span class="p">))</span>
 
-<span class="n">bar_plot</span> <span class="o">=</span> <span class="n">top_freight_carriers</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
-    <span class="n">invert_yaxis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xformatter</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%0.0f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">hover</span><span class="p">],</span>
+<span class="n">bar_plot</span> <span class="o">=</span> <span class="n">top_freight_carriers</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">xformatter</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%0.0f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">hover</span><span class="p">],</span>
     <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;freight (billions of lbs.)&#39;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Freight Transported per Carrier in 2019&#39;</span>
-<span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">invert_yaxis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17560,7 +17557,7 @@ Name: passengers, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>IMPORTANT</strong>: See the notebook for full interactivity.</p>
+<p><strong>Important</strong>: See the notebook for full interactivity.</p>
 
 </div>
 </div></section><section>
@@ -17667,7 +17664,7 @@ Name: passengers, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>IMPORTANT</strong>: See the notebook for full interactivity.</p>
+<p><strong>Important</strong>: See the notebook for full interactivity.</p>
 
 </div>
 </div></section><section>
@@ -17748,7 +17745,7 @@ Name: passengers, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>IMPORTANT</strong>: This example is embeded so that the dropdown updates the plot in the slides, but the other interaction tools function best in the notebook.</p>
+<p><strong>Important</strong>: This example is embeded so that the dropdown updates the plot in the slides, but the other interaction tools function best in the notebook.</p>
 
 </div>
 </div></section></section><section><section>
