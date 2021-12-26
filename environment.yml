@@ -4,7 +4,7 @@ channels:
 dependencies: 
     - python=3.8
     - bokeh=2.3.3
-    - ffmpeg=4.2.2
+    - ffmpeg=4.4.1
     - jupyterlab=3.1.1
     - matplotlib=3.4.3
     - numpy=1.21.2
