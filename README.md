@@ -8,7 +8,7 @@ While there are many plotting libraries to choose from, the prolific Matplotlib 
 
 ## Workshop Outline
 
-This is a 3-hour workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/). It's divided into the following sections:
+This is a workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/). It's divided into the following sections:
 
 ### Section 1: Getting Started With Matplotlib
 We will begin by familiarizing ourselves with Matplotlib. Moving beyond the default options, we will explore how to customize various aspects of our visualizations. By the end of this section, you will be able to generate plots using the Matplotlib API directly, as well as customize the plots that libraries like pandas and Seaborn create for you.
@@ -28,7 +28,7 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 ---
 
 ## Setup Instructions
-0. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that you can use [this](https://mybinder.org/v2/gh/stefmolin/binder-environments/data_viz_workshop?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fstefmolin%252Fpython-data-viz-workshop%26urlpath%3Dlab%252Ftree%252Fpython-data-viz-workshop%252F%26branch%3Dmain) Binder environment instead if you don't want to install anything on your machine.
+0. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that you can use [this](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab) Binder environment instead if you don't want to install anything on your machine.
 1. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
