@@ -1,6 +1,6 @@
 """Utility functions for the workshop."""
 
-from distutils.version import LooseVersion as Version
+from packaging.version import LegacyVersion as Version
 import importlib
 import json
 import os
@@ -42,7 +42,7 @@ def run_env_check():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version) != req_version:
+                if Version(version) != Version(req_version):
                     print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
                     continue
             print(OK, '%s' % pkg)
