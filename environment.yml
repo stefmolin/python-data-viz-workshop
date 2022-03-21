@@ -5,6 +5,7 @@ dependencies:
     - python=3.9
     - bokeh=2.4.2
     - ffmpeg=4.3.1
+    - geopandas=0.10.2
     - jupyterlab=3.3.0
     - matplotlib=3.5.1
     - numpy=1.22.3
