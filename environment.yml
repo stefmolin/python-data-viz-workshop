@@ -16,4 +16,4 @@ dependencies:
     - pyviz::geoviews=1.9.5
     - pyviz::holoviews=1.14.8
     - pyviz::hvplot=0.7.3
-    - pyviz::panel=0.12.6
+    - pyviz::panel=0.12.7
