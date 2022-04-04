@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# setup
+VENV_NAME="data_viz_workshop"
+
 # get paths
 SCRIPT=$(realpath "$0")
 SLIDES_DIR=$(dirname "$SCRIPT")
@@ -17,8 +20,8 @@ else
     if [[ "$CONDA_DEFAULT_ENV" == "" ]]; then
         echo "Virtual environment is not enabled. Quitting...";
     else
-        if [[ "$CONDA_DEFAULT_ENV" != "data_viz_workshop" ]]; then
-            echo "The data_viz_workshop conda env is not activated.";
+        if [[ "$CONDA_DEFAULT_ENV" != "$VENV_NAME" ]]; then
+            echo "The $VENV_NAME conda env is not activated.";
         else
             # if nbmerge isn't installed, do so
             echo "Checking for nbmerge..."
