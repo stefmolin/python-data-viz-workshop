@@ -81,10 +81,11 @@ a.anchor-link {
 }
 .CodeMirror pre {
     padding: 0.4em !important;
+    overflow-x: scroll !important; /* allow scrolling to see full code block */
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
-    --jp-content-font-size1: 20px;  /* base size of text */
+    --jp-content-font-size1: 19px;  /* base size of text */
     --jp-code-font-size: 15.2px;      /* size of code */
     --jp-cell-prompt-width: 110px;  /* width of In[] labels */
 }
@@ -162,17 +163,15 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = {{ reveal_scroll }}
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
+            let scale = 100;
+            let h = $('.reveal').height() * scale / 100;
+            $('section.present').find('section')
+              .filter(function() {
+                return $(this).height() > h;
+              })
+              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+              .css('overflow', 'scroll')
+              .css('margin-top', '20px');
         }
 
         // check and set the scrolling slide every time the slide change
