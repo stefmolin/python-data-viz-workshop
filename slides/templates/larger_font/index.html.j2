@@ -86,16 +86,32 @@ a.anchor-link {
 .jp-MarkdownOutput {
     overflow: hidden !important;
 }
-.jp-Cell {
-    margin-right: 20px !important;
-}
-.jp-RenderedSVG > svg, .jp-OutputArea-output > svg {
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
 }
 .slide-number {
     background-color: transparent !important;
     color: black !important;
     font-size: 18pt !important;
+}
+.slides { /* pull slides to left */
+  margin-left: -30px !important;
+}
+
+/* scrollbar formatting */
+::-webkit-scrollbar-thumb {
+    visibility: hidden; /* hide the scrollbar when not in use */
+}
+:hover::-webkit-scrollbar-thumb {
+    visibility: hidden; /* to show the scrollbar on hover, change to "visible" */
+}
+::-webkit-scrollbar-track-piece:start { /* make a little space at the top of the scrollbar */
+    background: transparent;
+    margin-top: 20px;
+}
+::-webkit-scrollbar-track-piece:end { /* leave enough space at the bottom of the scrollbar for the slide number */
+    background: transparent;
+    margin-bottom: 60px;
 }
 :root {
     --jp-ui-font-size1: 18pt;       /* size of tables in outputs */
