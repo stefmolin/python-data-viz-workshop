@@ -2,6 +2,7 @@
 {% set title = "Beyond the Basics: Data Visualization in Python" %}
 {% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
 {% set repo_name = "python-data-viz-workshop" %}
+{% set svg_plot_max_height = 650 %}
 
 {% from 'mathjax.html.j2' import mathjax %}
 {% from 'jupyter_widgets.html.j2' import jupyter_widgets %}
@@ -205,6 +206,13 @@ require(
               })
               .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
               .css('overflow', 'scroll');
+
+            // hack to resize plots rendered as SVGs if they hit the height limit
+            $('section.present').find('.jp-RenderedSVG').find('svg')
+              .filter(function() {
+                return $(this).height() >= {{svg_plot_max_height}};
+              }).css('width', '50%');
+
         }
 
         // check and set the scrolling slide every time the slide change
