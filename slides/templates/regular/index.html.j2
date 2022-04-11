@@ -86,6 +86,9 @@ a.anchor-link {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
 }
+.bk-root { /* keep responsive Bokeh plots from outgrowing their divs in the regular size layout */
+    transform: scale(0.9);
+}
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
     --jp-content-font-size1: 19px;  /* base size of text */
