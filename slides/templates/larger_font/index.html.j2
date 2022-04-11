@@ -73,7 +73,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 a.anchor-link {
    display: none;
 }
-.highlight  {
+.highlight { /* spacing between code block and the code inside it */
     margin: 0.4em 0.4em 0em !important;
 }
 .jp-Notebook {
@@ -175,14 +175,13 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true,
+            controls: false, // don't show for larger versions to have more room
             progress: true,
             slideNumber: "c",
             pdfSeparateFragments: false,
             history: true,
             transition: "{{reveal_transition}}",
             plugins: [RevealNotes],
-            controls: false, // don't show for larger versions to have more room
             width: 1600,
             height: 900
         });
@@ -196,15 +195,14 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            let scale = 100;
+            let scale = 95;
             let h = $('.reveal').height() * scale / 100;
             $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
               .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
-              .css('overflow', 'scroll')
-              .css('margin-top', '20px');
+              .css('overflow', 'scroll');
         }
 
         // check and set the scrolling slide every time the slide change
