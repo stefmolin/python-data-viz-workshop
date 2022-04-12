@@ -87,10 +87,13 @@ a.anchor-link {
 .jp-MarkdownOutput {
     overflow: hidden !important;
 }
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+    padding-right: 5px !important; /* padding after lead-in text */
+}
 .jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
 }
-.jp-OutputArea-executeResult > video {
+.jp-OutputArea-executeResult > video { /* scale videos */
     width: 800px;
     height: 600px;
 }
@@ -214,9 +217,12 @@ require(
             // hack to resize plots rendered as SVGs if they hit the height limit
             $('section.present').find('.jp-RenderedSVG').find('svg')
               .filter(function() {
-                return $(this).height() >= {{svg_plot_max_height}};
-              }).css('width', '50%');
+                return $(this).height() >= {{svg_plot_max_height}} && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
 
+            // make sure that responsive Bokeh plots don't outgrow their containers
+            $('section.present').find('.bk-root').parent().css('max-width', '85%');
         }
 
         // check and set the scrolling slide every time the slide change
