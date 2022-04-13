@@ -97,6 +97,9 @@ a.anchor-link {
     width: 900px;
     height: 600px;
 }
+.jp-OutputArea-executeResult > img, .jp-OutputArea-output > img { /* formatting for HoloViews image outputs */
+    margin: 0 !important;
+}
 .slide-number {
     background-color: transparent !important;
     color: black !important;
@@ -105,7 +108,6 @@ a.anchor-link {
 .slides { /* pull slides to left */
     margin-left: -30px !important;
 }
-
 /* scrollbar formatting */
 ::-webkit-scrollbar-thumb {
     visibility: hidden; /* hide the scrollbar when not in use */
@@ -207,12 +209,29 @@ require(
         function setScrollingSlide() {
             let scale = 95;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
               .css('overflow', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-50px')
+                .css('transform', 'scale(0.95)');
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('overflow', 'scroll')
+                .css('margin-bottom', '70px')
+                .css('margin-top', '-20px');
+            }
 
             // hack to resize plots rendered as SVGs if they hit the height limit
             $('section.present').find('.jp-RenderedSVG').find('svg')
