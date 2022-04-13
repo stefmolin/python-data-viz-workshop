@@ -172,19 +172,38 @@ require(
         function setScrollingSlide() {
             let scale = 100;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
-              .css('overflow', 'scroll')
-              .css('margin-top', '20px');
+              .css('overflow', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-20px')
+                .css('transform', 'scale(0.75)');
+
+              // hide footer
+              $('div.footer').css('display', 'none');
+
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('margin-top', '20px');
+            }
 
             // hack to resize plots rendered as SVGs if they hit the height limit
             $('section.present').find('.jp-RenderedSVG').find('svg')
               .filter(function() {
-                return $(this).height() >= {{svg_plot_max_height}};
-              }).css('max-width', '75%');
+                return $(this).height() >= {{svg_plot_max_height}} && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
 
             // make sure that responsive Bokeh plots don't outgrow their containers
             $('section.present').find('.bk-root').parent().css('max-width', '75%');
