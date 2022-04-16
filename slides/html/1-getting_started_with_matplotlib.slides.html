@@ -14686,7 +14686,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_section-1" data-mime-type="text/markdown">
 <h1 id="Section-1:-Getting-Started-With-Matplotlib">Section 1: Getting Started With Matplotlib<a class="anchor-link" href="#Section-1:-Getting-Started-With-Matplotlib">&#182;</a></h1><p>We will begin by familiarizing ourselves with Matplotlib. Moving beyond the default options, we will explore how to customize various aspects of our visualizations. By the end of this section, you will be able to generate plots using the Matplotlib API directly, as well as customize the plots that libraries like pandas and Seaborn create for you.</p>
 <div style="text-align: center;">
     <img width="35%" src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1973&q=80" alt="Sheep looking inquisitively." style="min-width: 375px">
@@ -110692,14 +110692,20 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true,
+            controls: true, // keybinding added to toggle this
             progress: true,
             slideNumber: "c",
-            showSlideNumber: "print",
+            showSlideNumber: "print", // keybinding added to toggle this for other views
             pdfSeparateFragments: false,
             history: true,
             transition: "slide",
-            plugins: [RevealNotes]
+            plugins: [RevealNotes],
+            keyboard: {
+                // map numpad numbers to their top row equivalents
+                97: () => Reveal.triggerKey(49), // 1
+                98: () => Reveal.triggerKey(50), // 2
+                99: () => Reveal.triggerKey(51), // 3
+            }
         });
 
         function isVisible(display) {
@@ -110714,6 +110720,20 @@ require(
         Reveal.addKeyBinding(
             { keyCode: 87, key: "W", description: "Toggle slide controls" },
             () => { $('.controls').css('display', (index, value) => isVisible(value)); }
+        );
+
+        // jump to slide prompt
+        Reveal.addKeyBinding(
+            { keyCode: 74, key: "J", description: "Jump to slide number" },
+            () => {
+                const slides = Reveal.getSlides();
+                const input = prompt("Jump to slide number");
+                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
+                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                }
+            }
         );
 
         var update = function(event){
@@ -110766,6 +110786,27 @@ require(
 
         // check and set the scrolling slide every time the slide change
         Reveal.addEventListener('slidechanged', setScrollingSlide);
+
+        // create links to any tagged cells
+        $('[class*="celltag_"]').each((index, element) => {
+            const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
+            const [ attr, value ] = tag.replace('celltag_', '').split('_');
+            $(`.${tag}`).parentsUntil('section').last().parent().attr(attr, value);
+        })
+
+        // add keybindings for section shortcuts (cells must be tagged)
+        const shortcuts = [
+            { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
+            { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
+            { name: "section 3", key: "3", id: "section-3", keyCode: 51 }
+        ];
+        for (const shortcut of shortcuts) {
+            const { id, key, name, keyCode } = shortcut;
+            Reveal.addKeyBinding(
+                { keyCode, key, description: `Jump to ${name}` },
+                () => { window.location = `#/${id}`; }
+            );
+        }
     }
 );
 </script>
