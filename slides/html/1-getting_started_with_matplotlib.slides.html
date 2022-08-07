@@ -80746,7 +80746,7 @@ L 280.809375 82.798125
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Final remarks on this example:</p>
 <ul>
-<li>More complicated subplot layouts can be created with <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/gridspec_multicolumn.html#sphx-glr-gallery-subplots-axes-and-figures-gridspec-multicolumn-py">GridSpec</a>.</li>
+<li>More complicated subplot layouts can be created with <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/gridspec_multicolumn.html#sphx-glr-gallery-subplots-axes-and-figures-gridspec-multicolumn-py">GridSpec</a> or the <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot_mosaic.html">Figure.subplot_mosaic()</a> method, which was added in v3.3 to make it easier to create complex layouts.</li>
 <li>We used both dictionary and list comprehensions here &ndash; check out <a href="https://www.geeksforgeeks.org/comprehensions-in-python/">this article</a> for more information on comprehensions in Python.</li>
 </ul>
 
@@ -111788,7 +111788,11 @@ z
 <p>The following are some additional avenues for exploration:</p>
 <ul>
 <li>Autoscaling <a href="https://matplotlib.org/stable/tutorials/intermediate/autoscale.html">tutorial</a></li>
-<li>Custom plot layouts with GridSpec <a href="https://matplotlib.org/stable/tutorials/intermediate/gridspec.html">tutorial</a></li>
+<li>Creating custom plot layouts:<ul>
+<li><a href="https://matplotlib.org/stable/tutorials/intermediate/gridspec.html">with GridSpec</a></li>
+<li><a href="https://matplotlib.org/stable/tutorials/provisional/mosaic.html">with subplot_mosaic()</a></li>
+</ul>
+</li>
 <li>Easily varying colors, line styles, etc. with <a href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.htmlhttps://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">cycler</a></li>
 <li>Plot configuration with <a href="https://matplotlib.org/stable/tutorials/introductory/customizing.htmlhttps://matplotlib.org/stable/tutorials/introductory/customizing.html">style sheets and rcParams</a></li>
 <li>Matplotlib toolkits:<ul>
