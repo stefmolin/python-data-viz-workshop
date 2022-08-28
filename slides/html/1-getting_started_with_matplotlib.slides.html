@@ -14957,7 +14957,7 @@ div.jp-OutputPrompt {
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_formats = [&#39;svg&#39;]
 
 <span class="c1"># OPTIONAL: make the output reproducible by setting the hashsalt</span>
-<span class="c1"># and some metadata (see the utils.py file for format)</span>
+<span class="c1"># and some metadata (see the utils.py file for more details)</span>
 <span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">mpl_svg_config</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.print_figure_kwargs = mpl_svg_config(&#39;section-1&#39;)
 </pre></div>
@@ -20986,7 +20986,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x141afce80&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x153ea8460&gt;]</pre>
 </div>
 
 </div>
@@ -23781,7 +23781,7 @@ L 473.325 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PolyCollection at 0x147d7cee0&gt;</pre>
+<pre>&lt;matplotlib.collections.PolyCollection at 0x153e73a60&gt;</pre>
 </div>
 
 </div>
@@ -48796,7 +48796,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x1469abb50&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x15caaaee0&gt;]</pre>
 </div>
 
 </div>
@@ -49573,7 +49573,7 @@ L 541.85 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x144a4a160&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x15cd1a4c0&gt;]</pre>
 </div>
 
 </div>
@@ -57274,10 +57274,10 @@ L 108 36
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.collections.PolyCollection at 0x130edb220&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x130edb610&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x130edb9d0&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x130edbd90&gt;]</pre>
+<pre>[&lt;matplotlib.collections.PolyCollection at 0x1542993a0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x154299790&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x154299b50&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x154299d60&gt;]</pre>
 </div>
 
 </div>
@@ -66919,7 +66919,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.lines.Line2D at 0x130fb6c10&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x154374c10&gt;</pre>
 </div>
 
 </div>
@@ -88792,7 +88792,7 @@ L 404.120312 170.28
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x1435da430&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x15466c5b0&gt;</pre>
 </div>
 
 </div>
@@ -94908,7 +94908,7 @@ z
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We will start by importing the <code>cm</code> module, which contains all the colormaps (full list <a href="https://matplotlib.org/stable/gallery/color/colormap_reference.html#sphx-glr-gallery-color-colormap-reference-py">here</a>). For this example, we will select the <code>tab10</code> qualitative colormap and reverse its order:</p>
+<p>For this example, we will select the <code>tab10</code> qualitative colormap and reverse its order:</p>
 
 </div>
 </div>
@@ -94921,9 +94921,9 @@ z
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">&#39;tab10&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -94938,7 +94938,7 @@ z
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Note: The colormap we selected is the default colormap, but reversing it will change the order in which the colors are assigned. Since we have nine elements and ten colors, we will see a new color this time.</em></p>
+<p><em>Note: The colormap we selected is the default colormap, but reversing it will change the order in which the colors are assigned. Since we have nine elements and ten colors, we will see a new color this time. Check out the full list of colormaps <a href="https://matplotlib.org/stable/gallery/color/colormap_reference.html#sphx-glr-gallery-color-colormap-reference-py">here</a>.</em></p>
 
 </div>
 </div>
