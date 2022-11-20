@@ -14,6 +14,6 @@ dependencies:
     - shapely=1.8.0
     - pyviz::geoviews-core=1.9.5
     - pyviz::geoviews=1.9.5
-    - pyviz::holoviews=1.14.8
-    - pyviz::hvplot=0.7.3
-    - pyviz::panel=0.12.7
+    - pyviz::holoviews=1.15.1
+    - pyviz::hvplot=0.8.1
+    - pyviz::panel=0.14.1
