@@ -3,15 +3,16 @@ channels:
     - conda-forge
 dependencies: 
     - python=3.9
-    - bokeh=2.4.2
+    - bokeh=2.4.3
+    - cartopy=0.21.0
     - ffmpeg=4.3.1
     - geopandas=0.10.2
-    - jupyterlab=3.3.0
-    - matplotlib=3.6.0
+    - jupyterlab=3.5.0
+    - matplotlib=3.6.1
     - numpy=1.22.3
-    - pandas=1.4.1
+    - pandas=1.5.1
     - seaborn=0.11.2
-    - shapely=1.8.0
+    - shapely=1.8.5
     - pyviz::geoviews-core=1.9.5
     - pyviz::geoviews=1.9.5
     - pyviz::holoviews=1.15.1
