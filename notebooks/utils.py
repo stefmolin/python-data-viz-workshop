@@ -77,6 +77,6 @@ def mpl_svg_config(hashsalt):
 
     return {
         'metadata': {
-            'Date': f"(c) 2021-{dt.date.today().year} Stefanie Molin"
+            'Date': f'(c) 2021-{dt.date.today().year} Stefanie Molin'
         }
     }
