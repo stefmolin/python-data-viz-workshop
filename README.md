@@ -1,6 +1,6 @@
 # Beyond the Basics: Data Visualization in Python
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/python-data-viz-workshop/tree/main/) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=github)](https://stefmolin.github.io/python-data-viz-workshop/slides/html/workshop.slides.html#/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/python-data-viz-workshop/tree/main/) ![GitHub repo size](https://img.shields.io/github/repo-size/stefmolin/python-data-viz-workshop) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=github)](https://stefmolin.github.io/python-data-viz-workshop/slides/html/workshop.slides.html#/)
 
 The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python.
 
