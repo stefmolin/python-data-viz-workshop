@@ -51,7 +51,7 @@ def run_env_check():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version) != Version(req_version):
+                if Version(version).base_version != Version(req_version).base_version:
                     print_version_failure(pkg, req_version, version)
                     continue
             print_version_ok(pkg)
