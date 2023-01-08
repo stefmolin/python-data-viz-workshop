@@ -1,6 +1,6 @@
 """Utility functions for the workshop."""
 
-from packaging.version import LegacyVersion as Version
+from packaging.version import Version
 import datetime as dt
 import importlib
 import json
@@ -38,27 +38,32 @@ def run_env_check():
         print(OK, 'Python is version %s\n' % sys.version)
 
     # check the requirements
+    def print_version_ok(pkg):
+        """Print an OK message for package version check."""
+        print(OK, '%s' % pkg)
+
+    def print_version_failure(pkg, req_version, version):
+        """Print a failure message for package version check."""
+        print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
+
     for pkg, req_version in requirements.items():
         try:
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
                 if Version(version) != Version(req_version):
-                    print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
+                    print_version_failure(pkg, req_version, version)
                     continue
-            print(OK, '%s' % pkg)
+            print_version_ok(pkg)
         except ImportError:
             if pkg == 'ffmpeg':
                 try:
                     pkg_info = json.loads(os.popen('conda list -f ffmpeg --json').read())[0]
                     if pkg_info:
                         if pkg_info['version'] != req_version:
-                            print(
-                                FAIL, 
-                                '%s version %s is required, but %s installed.' % (pkg, req_version, pkg_info['version'])
-                            )
+                            print_version_failure(pkg, req_version, pkg_info['version'])
                             continue
-                        print(OK, '%s' % pkg)
+                        print_version_ok(pkg)
                         continue
                 except IndexError:
                     pass
