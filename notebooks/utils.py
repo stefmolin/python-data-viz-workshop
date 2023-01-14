@@ -9,9 +9,22 @@ import sys
 import yaml
 
 
-OK = '\x1b[42m[ OK ]\x1b[0m'
-FAIL = '\x1b[41m[FAIL]\x1b[0m'
+_OK = '\x1b[42m[ OK ]\x1b[0m'
+_FAIL = '\x1b[41m[FAIL]\x1b[0m'
 
+def _print_version_ok(item):
+    """Print an OK message for version check."""
+    print(_OK, '%s' % item)
+
+def _print_version_failure(item, req_version, version):
+    """Print a failure message for version check."""
+    if version:
+        msg = '%s version %s is required, but %s installed.'
+        values = (item, req_version, version)
+    else:
+        msg = '%s is not installed.'
+        values = item
+    print(_FAIL, msg % values)
 
 def run_env_check():
     """Check that the packages we need are installed and the Python version is correct."""
@@ -27,24 +40,19 @@ def run_env_check():
         requirements[pkg.split('::')[-1]] = version
 
     # check the python version
-    print('Using Python in %s:' % sys.prefix)
     python_version = sys.version_info
     required_version = requirements.pop('python')
     for component, value in zip(['major', 'minor', 'micro'], required_version.split('.')):
         if getattr(python_version, component) != int(value):
-            print(FAIL, 'Python version %s is required, but %s is installed.\n' % (required_version, sys.version))
+            print(f'Using Python at {sys.prefix}:\n-> {sys.version}')
+            _print_version_failure(
+                'Python',
+                required_version,
+                f'{python_version.major}.{python_version.minor}'
+            )
             break
     else:
-        print(OK, 'Python is version %s\n' % sys.version)
-
-    # check the requirements
-    def print_version_ok(pkg):
-        """Print an OK message for package version check."""
-        print(OK, '%s' % pkg)
-
-    def print_version_failure(pkg, req_version, version):
-        """Print a failure message for package version check."""
-        print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
+        _print_version_ok('Python')
 
     for pkg, req_version in requirements.items():
         try:
@@ -52,22 +60,22 @@ def run_env_check():
             if req_version:
                 version = mod.__version__
                 if Version(version).base_version != Version(req_version).base_version:
-                    print_version_failure(pkg, req_version, version)
+                    _print_version_failure(pkg, req_version, version)
                     continue
-            print_version_ok(pkg)
+            _print_version_ok(pkg)
         except ImportError:
             if pkg == 'ffmpeg':
                 try:
                     pkg_info = json.loads(os.popen('conda list -f ffmpeg --json').read())[0]
                     if pkg_info:
                         if pkg_info['version'] != req_version:
-                            print_version_failure(pkg, req_version, pkg_info['version'])
+                            _print_version_failure(pkg, req_version, pkg_info['version'])
                             continue
-                        print_version_ok(pkg)
+                        _print_version_ok(pkg)
                         continue
                 except IndexError:
                     pass
-            print(FAIL, '%s not installed.' % pkg)
+            _print_version_failure(pkg, req_version, None)
 
 def despine(ax):
     """Hide the top and right spines on a Matplotlib Axes object."""
