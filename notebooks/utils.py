@@ -9,32 +9,58 @@ import sys
 import yaml
 
 
-_OK = '\x1b[42m[ OK ]\x1b[0m'
-_FAIL = '\x1b[41m[FAIL]\x1b[0m'
 
-def _print_version_ok(item):
-    """Print an OK message for version check."""
-    print(_OK, '%s' % item)
+def despine(ax):
+    """Hide the top and right spines on a Matplotlib Axes object."""
+    for spine in ['top', 'right']:
+        ax.spines[spine].set_visible(False)
+    return ax
 
-def _print_version_failure(item, req_version, version):
-    """Print a failure message for version check."""
-    if version:
-        msg = '%s version %s is required, but %s installed.'
-        values = (item, req_version, version)
-    else:
-        msg = '%s is not installed.'
-        values = item
-    print(_FAIL, msg % values)
+def mpl_svg_config(hashsalt):
+    """Help configure the SVG backend for Matplotlib and make it reproducible."""
+    from matplotlib import rc
+    rc('svg', hashsalt=hashsalt)
+
+    return {
+        'metadata': {
+            'Date': f'(c) 2021-{dt.date.today().year} Stefanie Molin'
+        }
+    }
 
 def run_env_check():
     """Check that the packages we need are installed and the Python version is correct."""
+
+    def _print_version_ok(item):
+        """Print an OK message for version check."""
+        print('\x1b[42m[ OK ]\x1b[0m', '%s' % item)
+
+    def _print_version_failure(item, req_version, version):
+        """Print a failure message for version check."""
+        if version:
+            msg = '%s version %s is required, but %s installed.'
+            values = (item, req_version, version)
+        else:
+            msg = '%s is not installed.'
+            values = item
+        print('\x1b[41m[FAIL]\x1b[0m', msg % values)
+
     # read in the environment file and process versions
     with open('../environment.yml', 'r') as file:
         env = yaml.safe_load(file)
 
     requirements = {}
-    for req in env['dependencies']:
-        pkg, version = req.split('=')
+    for line in env['dependencies']:
+        try:
+            if '>=' in line:
+                pkg, versions = line.split('>=')
+                if ',<=' in versions:
+                    version = versions.split(',<=')
+                else:
+                    version = [versions, None]
+            else:
+                pkg, version = line.split('=')
+        except ValueError:
+            pkg, version = line, None
         if '-' in pkg:
             continue
         requirements[pkg.split('::')[-1]] = version
@@ -59,7 +85,18 @@ def run_env_check():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version).base_version != Version(req_version).base_version:
+                installed_version = Version(version).base_version
+                if isinstance(req_version, list):
+                    min_version, max_version = req_version
+                    if (
+                        installed_version < Version(min_version).base_version
+                        or (max_version and installed_version > Version(max_version).base_version)
+                    ):
+                        _print_version_failure(
+                            pkg, f'>= {min_version}{f" and <= {max_version}" if max_version else ""}', version
+                        )
+                        continue
+                elif Version(version).base_version != Version(req_version).base_version:
                     _print_version_failure(pkg, req_version, version)
                     continue
             _print_version_ok(pkg)
@@ -68,28 +105,25 @@ def run_env_check():
                 try:
                     pkg_info = json.loads(os.popen('conda list -f ffmpeg --json').read())[0]
                     if pkg_info:
-                        if pkg_info['version'] != req_version:
-                            _print_version_failure(pkg, req_version, pkg_info['version'])
-                            continue
+                        if req_version:
+                            if isinstance(req_version, list):
+                                min_version, max_version = req_version
+                                installed_version = Version(pkg_info['version'])
+                                if (
+                                    installed_version < Version(min_version)
+                                    or (max_version and installed_version > Version(max_version))
+                                ):
+                                    _print_version_failure(
+                                        pkg,
+                                        f'>= {min_version}{f" and <= {max_version}" if max_version else ""}',
+                                        pkg_info['version']
+                                    )
+                                    continue
+                            elif pkg_info['version'] != req_version:
+                                _print_version_failure(pkg, req_version, pkg_info['version'])
+                                continue
                         _print_version_ok(pkg)
                         continue
                 except IndexError:
                     pass
             _print_version_failure(pkg, req_version, None)
-
-def despine(ax):
-    """Hide the top and right spines on a Matplotlib Axes object."""
-    for spine in ['top', 'right']:
-        ax.spines[spine].set_visible(False)
-    return ax
-
-def mpl_svg_config(hashsalt):
-    """Help configure the SVG backend for Matplotlib and make it reproducible."""
-    from matplotlib import rc
-    rc('svg', hashsalt=hashsalt)
-
-    return {
-        'metadata': {
-            'Date': f'(c) 2021-{dt.date.today().year} Stefanie Molin'
-        }
-    }
