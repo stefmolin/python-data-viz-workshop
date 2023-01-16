@@ -93,10 +93,6 @@ a.anchor-link {
 .jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
 }
-.jp-OutputArea-executeResult > video { /* scale videos */
-    width: 900px;
-    height: 600px;
-}
 .jp-OutputArea-executeResult > img, .jp-OutputArea-output > img { /* formatting for HoloViews image outputs */
     margin: 0 !important;
 }
@@ -268,6 +264,12 @@ require(
 
             // make sure that responsive Bokeh plots don't outgrow their containers
             $('section.present').find('.bk-root').parent().css('max-width', '95%');
+
+            // resize videos based on their aspect ratios (avoid introducing whitespace)
+            const video = $('section.present').find('.jp-OutputArea-executeResult video');
+            const aspectRatio = video.width() / video.height();
+            const videoWidth = 900;
+            video.css('width', `${videoWidth}px`).css('height', `${videoWidth / aspectRatio}px`);
         }
 
         // check and set the scrolling slide every time the slide change
