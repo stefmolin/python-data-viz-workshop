@@ -1,4 +1,7 @@
-# This is a basic workflow to help you get started with Actions
+# This workflow builds the workshop environment on Mac, Linux, and Windows for
+# multiple versions of Python to confirm it can be properly installed.
+# 
+# Author: Stefanie Molin
 
 name: Env Build
 
