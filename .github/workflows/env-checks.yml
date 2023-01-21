@@ -4,9 +4,9 @@ name: Env Build
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push events but only for the "main" branch
+  # Triggers the workflow on push events but only certain branches
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
   # Trigger on pull request always (note the trailing colon)
   pull_request:
