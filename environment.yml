@@ -1,7 +1,7 @@
 name: data_viz_workshop
 channels:
     - conda-forge
-dependencies: 
+dependencies:
     - python=3.10
     - bokeh=2.4.3
     - ffmpeg
