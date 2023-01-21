@@ -3,7 +3,7 @@
 # 
 # Author: Stefanie Molin
 
-name: env build
+name: Env Build
 
 # Controls when the workflow will run
 on:
