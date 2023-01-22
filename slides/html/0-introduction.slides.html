@@ -14485,6 +14485,9 @@ a.anchor-link {
 .jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
     padding-right: 5px !important; /* padding after lead-in text */
 }
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
@@ -14495,6 +14498,9 @@ a.anchor-link {
     font-size: 12pt !important;
     right: 5px !important;
     bottom: 5px !important;
+}
+.slides { /* pull slides to left */
+    margin-left: -20px !important;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14870,6 +14876,9 @@ require(
 
             // make sure that responsive Bokeh plots don't outgrow their containers
             $('section.present').find('.bk-root').parent().css('max-width', '75%');
+
+            // hide some of empty space above the logos when enabling a plotting extension
+            $('section.present').find('.jp-RenderedJavaScript').parent().css('height', '0px');
         }
 
         // check and set the scrolling slide every time the slide change
