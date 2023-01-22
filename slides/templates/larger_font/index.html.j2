@@ -96,6 +96,9 @@ a.anchor-link {
 .jp-OutputArea-executeResult > img, .jp-OutputArea-output > img { /* formatting for HoloViews image outputs */
     margin: 0 !important;
 }
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .slide-number {
     background-color: transparent !important;
     color: black !important;
@@ -270,6 +273,9 @@ require(
             const aspectRatio = video.width() / video.height();
             const videoWidth = 900;
             video.css('width', `${videoWidth}px`).css('height', `${videoWidth / aspectRatio}px`);
+
+            // hide some of empty space above the logos when enabling a plotting extension
+            $('section.present').find('.jp-RenderedJavaScript').parent().css('height', '0px');
         }
 
         // check and set the scrolling slide every time the slide change
