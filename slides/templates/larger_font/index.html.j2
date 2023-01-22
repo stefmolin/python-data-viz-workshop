@@ -213,7 +213,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -311,7 +312,8 @@ require(
         $('clipPath').each((index, element) => {
             const oldId = $(element).attr('id');
             if (oldId in clipPathIds) {
-                // change this id and grab the parent SVG and then for all the elements with clip-path switch the id
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
                 const newId = `${oldId}${clipPathIds[oldId]}`;
                 $(element).attr('id', newId);
                 $(element).closest('svg').find('[clip-path]').each((index, item) => {
