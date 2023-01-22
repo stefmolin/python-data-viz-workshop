@@ -14944,7 +14944,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Those familiar with pandas have likely used the <code>plot()</code> method to generate visualizations. First, we will configure our Matplotlib plotting backend to create reproducible SVG output:</p>
+<p>Those familiar with pandas have likely used the <code>plot()</code> method to generate visualizations. We will start by configuring our Matplotlib plotting backend to generate SVG output (first argument) with custom metadata (second argument):</p>
 
 </div>
 </div>
@@ -14978,7 +14978,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Note: The first argument sets the output format to SVG. The second argument is optional and is used here to make the SVG output reproducible by setting the <code>hashsalt</code> along with some metadata, which will be used by Matplotlib when generating any SVG output (see the <code>utils.py</code> file for more details).</em></p>
+<p><em>Note: The second argument is optional and is used here to make the SVG output reproducible by setting the <code>hashsalt</code> along with some metadata, which will be used by Matplotlib when generating any SVG output (see the <code>utils.py</code> file for more details). Without this argument, different runs of the same plotting code will generate plots that are visually identical, but differ at the HTML level due to different IDs, metadata, etc.</em></p>
 
 </div>
 </div>
@@ -15005,7 +15005,7 @@ div.jp-OutputPrompt {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;creation date&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;total questions&#39;</span><span class="p">,</span> 
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Matplotlib Questions per Month</span><span class="se">\n</span><span class="s1">(since the creation of Stack Overflow)&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Matplotlib Questions per Month</span><span class="se">\n</span><span class="s1">(since the creation of Stack Overflow)&#39;</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -20502,7 +20502,7 @@ z
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now that we have the basics down, let's see how to create other plot types and add additional components to them like legends, reference lines, and annotations. Note that the anatomy of a figure diagram we looked at earlier will help moving from idea to implementation since it helps identify the right keywords to search. It may also be helpful to bookmark <a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf">this</a> Matplotlib cheat sheet.</p>
+<p>Now that we have the basics down, let's see how to create other plot types and add additional components to them, like legends, reference lines, and annotations. Note that the anatomy of a figure diagram we looked at earlier will help moving from idea to implementation since it helps identify the right keywords to search. It may also be helpful to bookmark <a href="https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf">this</a> Matplotlib cheat sheet.</p>
 
 </div>
 </div>
@@ -20972,7 +20972,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x10f6148b0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x158a088b0&gt;]</pre>
 </div>
 
 </div>
@@ -23762,7 +23762,7 @@ L 473.325 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PolyCollection at 0x10f638430&gt;</pre>
+<pre>&lt;matplotlib.collections.PolyCollection at 0x158a2bfd0&gt;</pre>
 </div>
 
 </div>
@@ -48769,7 +48769,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x10f66f2e0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x15d13d510&gt;]</pre>
 </div>
 
 </div>
@@ -49539,7 +49539,7 @@ L 541.85 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x15f7740d0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x15cc440a0&gt;]</pre>
 </div>
 
 </div>
@@ -57226,10 +57226,10 @@ L 108 36
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.collections.PolyCollection at 0x15a329ae0&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x15a329e70&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x15a32a1d0&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x15a32a410&gt;]</pre>
+<pre>[&lt;matplotlib.collections.PolyCollection at 0x1591706a0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x159170a30&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x159170d90&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x1591710f0&gt;]</pre>
 </div>
 
 </div>
@@ -66840,7 +66840,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.lines.Line2D at 0x159180df0&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x13ed6bb50&gt;</pre>
 </div>
 
 </div>
@@ -86726,7 +86726,7 @@ z
     <span class="s1">&#39;../data/stackoverflow_tag_co_occurrences.csv&#39;</span><span class="p">,</span>
     <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;library&#39;</span>
 <span class="p">)</span>
-<span class="n">co_occur</span>
+<span class="n">co_occur</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -86747,160 +86747,258 @@ z
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<style type="text/css">
+#T_07910_row0_col0, #T_07910_row0_col6, #T_07910_row1_col1, #T_07910_row1_col2, #T_07910_row2_col0, #T_07910_row2_col1, #T_07910_row2_col2, #T_07910_row2_col3, #T_07910_row2_col4, #T_07910_row2_col7, #T_07910_row3_col2, #T_07910_row3_col3, #T_07910_row3_col4, #T_07910_row4_col0, #T_07910_row4_col1, #T_07910_row4_col2, #T_07910_row4_col3, #T_07910_row4_col4, #T_07910_row5_col0, #T_07910_row5_col1, #T_07910_row5_col3, #T_07910_row5_col4, #T_07910_row5_col5, #T_07910_row5_col7, #T_07910_row6_col0, #T_07910_row6_col1, #T_07910_row6_col2, #T_07910_row6_col3, #T_07910_row6_col4, #T_07910_row6_col6, #T_07910_row6_col7, #T_07910_row7_col0, #T_07910_row7_col1, #T_07910_row7_col2, #T_07910_row7_col6, #T_07910_row7_col7, #T_07910_row8_col0, #T_07910_row8_col1, #T_07910_row8_col3, #T_07910_row8_col4, #T_07910_row8_col7, #T_07910_row8_col8 {
+  background-color: #fff7fb;
+  color: #000000;
+}
+#T_07910_row0_col1 {
+  background-color: #faf3f9;
+  color: #000000;
+}
+#T_07910_row0_col2, #T_07910_row7_col5 {
+  background-color: #fcf4fa;
+  color: #000000;
+}
+#T_07910_row0_col3 {
+  background-color: #60a1ca;
+  color: #f1f1f1;
+}
+#T_07910_row0_col4, #T_07910_row1_col0, #T_07910_row3_col1, #T_07910_row7_col3 {
+  background-color: #f8f1f8;
+  color: #000000;
+}
+#T_07910_row0_col5 {
+  background-color: #fbf4f9;
+  color: #000000;
+}
+#T_07910_row0_col7 {
+  background-color: #eee9f3;
+  color: #000000;
+}
+#T_07910_row0_col8 {
+  background-color: #f0eaf4;
+  color: #000000;
+}
+#T_07910_row1_col3 {
+  background-color: #8fb4d6;
+  color: #000000;
+}
+#T_07910_row1_col4, #T_07910_row5_col2, #T_07910_row6_col5 {
+  background-color: #f7f0f7;
+  color: #000000;
+}
+#T_07910_row1_col5 {
+  background-color: #f9f2f8;
+  color: #000000;
+}
+#T_07910_row1_col6, #T_07910_row3_col6, #T_07910_row4_col6, #T_07910_row4_col7, #T_07910_row8_col2 {
+  background-color: #fef6fa;
+  color: #000000;
+}
+#T_07910_row1_col7 {
+  background-color: #e9e5f1;
+  color: #000000;
+}
+#T_07910_row1_col8, #T_07910_row5_col6, #T_07910_row7_col8 {
+  background-color: #f2ecf5;
+  color: #000000;
+}
+#T_07910_row2_col5 {
+  background-color: #81aed2;
+  color: #f1f1f1;
+}
+#T_07910_row2_col6 {
+  background-color: #fdf5fa;
+  color: #000000;
+}
+#T_07910_row2_col8 {
+  background-color: #d4d4e8;
+  color: #000000;
+}
+#T_07910_row3_col0 {
+  background-color: #f1ebf5;
+  color: #000000;
+}
+#T_07910_row3_col5 {
+  background-color: #fbf3f9;
+  color: #000000;
+}
+#T_07910_row3_col7 {
+  background-color: #a7bddb;
+  color: #000000;
+}
+#T_07910_row3_col8 {
+  background-color: #f5eff6;
+  color: #000000;
+}
+#T_07910_row4_col5 {
+  background-color: #ede8f3;
+  color: #000000;
+}
+#T_07910_row4_col8 {
+  background-color: #d0d1e6;
+  color: #000000;
+}
+#T_07910_row5_col8 {
+  background-color: #eae6f1;
+  color: #000000;
+}
+#T_07910_row6_col8 {
+  background-color: #e3e0ee;
+  color: #000000;
+}
+#T_07910_row7_col4 {
+  background-color: #fef6fb;
+  color: #000000;
+}
+#T_07910_row8_col5 {
+  background-color: #faf2f8;
+  color: #000000;
+}
+#T_07910_row8_col6 {
+  background-color: #f4eef6;
+  color: #000000;
+}
 </style>
-<table border="1" class="dataframe">
+<table id="T_07910">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>hvplot</th>
-      <th>geoviews</th>
-      <th>seaborn</th>
-      <th>holoviews</th>
-      <th>geopandas</th>
-      <th>matplotlib</th>
-      <th>numpy</th>
-      <th>bokeh</th>
-      <th>pandas</th>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_07910_level0_col0" class="col_heading level0 col0" >hvplot</th>
+      <th id="T_07910_level0_col1" class="col_heading level0 col1" >geoviews</th>
+      <th id="T_07910_level0_col2" class="col_heading level0 col2" >seaborn</th>
+      <th id="T_07910_level0_col3" class="col_heading level0 col3" >holoviews</th>
+      <th id="T_07910_level0_col4" class="col_heading level0 col4" >geopandas</th>
+      <th id="T_07910_level0_col5" class="col_heading level0 col5" >matplotlib</th>
+      <th id="T_07910_level0_col6" class="col_heading level0 col6" >numpy</th>
+      <th id="T_07910_level0_col7" class="col_heading level0 col7" >bokeh</th>
+      <th id="T_07910_level0_col8" class="col_heading level0 col8" >pandas</th>
     </tr>
     <tr>
-      <th>library</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="index_name level0" >library</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+      <th class="blank col8" >&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>hvplot</th>
-      <td>0.000000</td>
-      <td>0.032609</td>
-      <td>0.021739</td>
-      <td>0.539855</td>
-      <td>0.048913</td>
-      <td>0.023551</td>
-      <td>0.000000</td>
-      <td>0.110507</td>
-      <td>0.103261</td>
+      <th id="T_07910_level0_row0" class="row_heading level0 row0" >hvplot</th>
+      <td id="T_07910_row0_col0" class="data row0 col0" >0.000000</td>
+      <td id="T_07910_row0_col1" class="data row0 col1" >0.032609</td>
+      <td id="T_07910_row0_col2" class="data row0 col2" >0.021739</td>
+      <td id="T_07910_row0_col3" class="data row0 col3" >0.539855</td>
+      <td id="T_07910_row0_col4" class="data row0 col4" >0.048913</td>
+      <td id="T_07910_row0_col5" class="data row0 col5" >0.023551</td>
+      <td id="T_07910_row0_col6" class="data row0 col6" >0.000000</td>
+      <td id="T_07910_row0_col7" class="data row0 col7" >0.110507</td>
+      <td id="T_07910_row0_col8" class="data row0 col8" >0.103261</td>
     </tr>
     <tr>
-      <th>geoviews</th>
-      <td>0.047619</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.431217</td>
-      <td>0.058201</td>
-      <td>0.039683</td>
-      <td>0.007937</td>
-      <td>0.140212</td>
-      <td>0.084656</td>
+      <th id="T_07910_level0_row1" class="row_heading level0 row1" >geoviews</th>
+      <td id="T_07910_row1_col0" class="data row1 col0" >0.047619</td>
+      <td id="T_07910_row1_col1" class="data row1 col1" >0.000000</td>
+      <td id="T_07910_row1_col2" class="data row1 col2" >0.000000</td>
+      <td id="T_07910_row1_col3" class="data row1 col3" >0.431217</td>
+      <td id="T_07910_row1_col4" class="data row1 col4" >0.058201</td>
+      <td id="T_07910_row1_col5" class="data row1 col5" >0.039683</td>
+      <td id="T_07910_row1_col6" class="data row1 col6" >0.007937</td>
+      <td id="T_07910_row1_col7" class="data row1 col7" >0.140212</td>
+      <td id="T_07910_row1_col8" class="data row1 col8" >0.084656</td>
     </tr>
     <tr>
-      <th>seaborn</th>
-      <td>0.000270</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000135</td>
-      <td>0.000607</td>
-      <td>0.468033</td>
-      <td>0.015871</td>
-      <td>0.002001</td>
-      <td>0.230780</td>
+      <th id="T_07910_level0_row2" class="row_heading level0 row2" >seaborn</th>
+      <td id="T_07910_row2_col0" class="data row2 col0" >0.000270</td>
+      <td id="T_07910_row2_col1" class="data row2 col1" >0.000000</td>
+      <td id="T_07910_row2_col2" class="data row2 col2" >0.000000</td>
+      <td id="T_07910_row2_col3" class="data row2 col3" >0.000135</td>
+      <td id="T_07910_row2_col4" class="data row2 col4" >0.000607</td>
+      <td id="T_07910_row2_col5" class="data row2 col5" >0.468033</td>
+      <td id="T_07910_row2_col6" class="data row2 col6" >0.015871</td>
+      <td id="T_07910_row2_col7" class="data row2 col7" >0.002001</td>
+      <td id="T_07910_row2_col8" class="data row2 col8" >0.230780</td>
     </tr>
     <tr>
-      <th>holoviews</th>
-      <td>0.091636</td>
-      <td>0.050123</td>
-      <td>0.001845</td>
-      <td>0.000000</td>
-      <td>0.003075</td>
-      <td>0.030750</td>
-      <td>0.010148</td>
-      <td>0.371771</td>
-      <td>0.066113</td>
+      <th id="T_07910_level0_row3" class="row_heading level0 row3" >holoviews</th>
+      <td id="T_07910_row3_col0" class="data row3 col0" >0.091636</td>
+      <td id="T_07910_row3_col1" class="data row3 col1" >0.050123</td>
+      <td id="T_07910_row3_col2" class="data row3 col2" >0.001845</td>
+      <td id="T_07910_row3_col3" class="data row3 col3" >0.000000</td>
+      <td id="T_07910_row3_col4" class="data row3 col4" >0.003075</td>
+      <td id="T_07910_row3_col5" class="data row3 col5" >0.030750</td>
+      <td id="T_07910_row3_col6" class="data row3 col6" >0.010148</td>
+      <td id="T_07910_row3_col7" class="data row3 col7" >0.371771</td>
+      <td id="T_07910_row3_col8" class="data row3 col8" >0.066113</td>
     </tr>
     <tr>
-      <th>geopandas</th>
-      <td>0.002724</td>
-      <td>0.002220</td>
-      <td>0.002724</td>
-      <td>0.001009</td>
-      <td>0.000000</td>
-      <td>0.118644</td>
-      <td>0.009988</td>
-      <td>0.011703</td>
-      <td>0.250504</td>
+      <th id="T_07910_level0_row4" class="row_heading level0 row4" >geopandas</th>
+      <td id="T_07910_row4_col0" class="data row4 col0" >0.002724</td>
+      <td id="T_07910_row4_col1" class="data row4 col1" >0.002220</td>
+      <td id="T_07910_row4_col2" class="data row4 col2" >0.002724</td>
+      <td id="T_07910_row4_col3" class="data row4 col3" >0.001009</td>
+      <td id="T_07910_row4_col4" class="data row4 col4" >0.000000</td>
+      <td id="T_07910_row4_col5" class="data row4 col5" >0.118644</td>
+      <td id="T_07910_row4_col6" class="data row4 col6" >0.009988</td>
+      <td id="T_07910_row4_col7" class="data row4 col7" >0.011703</td>
+      <td id="T_07910_row4_col8" class="data row4 col8" >0.250504</td>
     </tr>
     <tr>
-      <th>matplotlib</th>
-      <td>0.000036</td>
-      <td>0.000041</td>
-      <td>0.057304</td>
-      <td>0.000275</td>
-      <td>0.003237</td>
-      <td>0.000000</td>
-      <td>0.087198</td>
-      <td>0.001594</td>
-      <td>0.135548</td>
+      <th id="T_07910_level0_row5" class="row_heading level0 row5" >matplotlib</th>
+      <td id="T_07910_row5_col0" class="data row5 col0" >0.000036</td>
+      <td id="T_07910_row5_col1" class="data row5 col1" >0.000041</td>
+      <td id="T_07910_row5_col2" class="data row5 col2" >0.057304</td>
+      <td id="T_07910_row5_col3" class="data row5 col3" >0.000275</td>
+      <td id="T_07910_row5_col4" class="data row5 col4" >0.003237</td>
+      <td id="T_07910_row5_col5" class="data row5 col5" >0.000000</td>
+      <td id="T_07910_row5_col6" class="data row5 col6" >0.087198</td>
+      <td id="T_07910_row5_col7" class="data row5 col7" >0.001594</td>
+      <td id="T_07910_row5_col8" class="data row5 col8" >0.135548</td>
     </tr>
     <tr>
-      <th>numpy</th>
-      <td>0.000000</td>
-      <td>0.000005</td>
-      <td>0.001254</td>
-      <td>0.000059</td>
-      <td>0.000176</td>
-      <td>0.056294</td>
-      <td>0.000000</td>
-      <td>0.000144</td>
-      <td>0.167267</td>
+      <th id="T_07910_level0_row6" class="row_heading level0 row6" >numpy</th>
+      <td id="T_07910_row6_col0" class="data row6 col0" >0.000000</td>
+      <td id="T_07910_row6_col1" class="data row6 col1" >0.000005</td>
+      <td id="T_07910_row6_col2" class="data row6 col2" >0.001254</td>
+      <td id="T_07910_row6_col3" class="data row6 col3" >0.000059</td>
+      <td id="T_07910_row6_col4" class="data row6 col4" >0.000176</td>
+      <td id="T_07910_row6_col5" class="data row6 col5" >0.056294</td>
+      <td id="T_07910_row6_col6" class="data row6 col6" >0.000000</td>
+      <td id="T_07910_row6_col7" class="data row6 col7" >0.000144</td>
+      <td id="T_07910_row6_col8" class="data row6 col8" >0.167267</td>
     </tr>
     <tr>
-      <th>bokeh</th>
-      <td>0.002318</td>
-      <td>0.002014</td>
-      <td>0.003382</td>
-      <td>0.045942</td>
-      <td>0.004408</td>
-      <td>0.022002</td>
-      <td>0.003078</td>
-      <td>0.000000</td>
-      <td>0.087855</td>
+      <th id="T_07910_level0_row7" class="row_heading level0 row7" >bokeh</th>
+      <td id="T_07910_row7_col0" class="data row7 col0" >0.002318</td>
+      <td id="T_07910_row7_col1" class="data row7 col1" >0.002014</td>
+      <td id="T_07910_row7_col2" class="data row7 col2" >0.003382</td>
+      <td id="T_07910_row7_col3" class="data row7 col3" >0.045942</td>
+      <td id="T_07910_row7_col4" class="data row7 col4" >0.004408</td>
+      <td id="T_07910_row7_col5" class="data row7 col5" >0.022002</td>
+      <td id="T_07910_row7_col6" class="data row7 col6" >0.003078</td>
+      <td id="T_07910_row7_col7" class="data row7 col7" >0.000000</td>
+      <td id="T_07910_row7_col8" class="data row7 col8" >0.087855</td>
     </tr>
     <tr>
-      <th>pandas</th>
-      <td>0.000044</td>
-      <td>0.000025</td>
-      <td>0.007961</td>
-      <td>0.000167</td>
-      <td>0.001926</td>
-      <td>0.038191</td>
-      <td>0.073000</td>
-      <td>0.001793</td>
-      <td>0.000000</td>
+      <th id="T_07910_level0_row8" class="row_heading level0 row8" >pandas</th>
+      <td id="T_07910_row8_col0" class="data row8 col0" >0.000044</td>
+      <td id="T_07910_row8_col1" class="data row8 col1" >0.000025</td>
+      <td id="T_07910_row8_col2" class="data row8 col2" >0.007961</td>
+      <td id="T_07910_row8_col3" class="data row8 col3" >0.000167</td>
+      <td id="T_07910_row8_col4" class="data row8 col4" >0.001926</td>
+      <td id="T_07910_row8_col5" class="data row8 col5" >0.038191</td>
+      <td id="T_07910_row8_col6" class="data row8 col6" >0.073000</td>
+      <td id="T_07910_row8_col7" class="data row8 col7" >0.001793</td>
+      <td id="T_07910_row8_col8" class="data row8 col8" >0.000000</td>
     </tr>
   </tbody>
 </table>
-</div>
-</div>
 
 </div>
 
@@ -86908,7 +87006,21 @@ z
 
 </div>
 
-</div></section><section >
+</div>
+
+</div><div class="fragment" >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>Tip: For more on styling DataFrames, check out the pandas documentation <a href="https://pandas.pydata.org/docs/user_guide/style.html">here</a>.</em></p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -88661,7 +88773,7 @@ L 404.120312 173.52
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x15de1ef50&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x16ce02ec0&gt;</pre>
 </div>
 
 </div>
@@ -112751,8 +112863,8 @@ z
 <li><a href="https://matplotlib.org/stable/tutorials/provisional/mosaic.html">with subplot_mosaic()</a></li>
 </ul>
 </li>
-<li>Easily varying colors, line styles, etc. with <a href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.htmlhttps://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">cycler</a></li>
-<li>Plot configuration with <a href="https://matplotlib.org/stable/tutorials/introductory/customizing.htmlhttps://matplotlib.org/stable/tutorials/introductory/customizing.html">style sheets and rcParams</a></li>
+<li>Easily varying colors, line styles, etc. with <a href="https://matplotlib.org/stable/tutorials/intermediate/color_cycle.html">cycler</a></li>
+<li>Plot configuration with <a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html">style sheets and rcParams</a></li>
 <li>Matplotlib toolkits:<ul>
 <li><a href="https://matplotlib.org/stable/tutorials/toolkits/mplot3d.html#sphx-glr-tutorials-toolkits-mplot3d-py">3D plots with mplot3d</a></li>
 <li><a href="https://matplotlib.org/stable/tutorials/toolkits/axes_grid.html">plot layouts with axes_grid1</a></li>
@@ -112842,7 +112954,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -112936,7 +113049,8 @@ require(
         $('clipPath').each((index, element) => {
             const oldId = $(element).attr('id');
             if (oldId in clipPathIds) {
-                // change this id and grab the parent SVG and then for all the elements with clip-path switch the id
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
                 const newId = `${oldId}${clipPathIds[oldId]}`;
                 $(element).attr('id', newId);
                 $(element).closest('svg').find('[clip-path]').each((index, item) => {
