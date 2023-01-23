@@ -93,12 +93,11 @@ a.anchor-link {
 .jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
 }
-.jp-OutputArea-executeResult > video { /* scale videos */
-    width: 900px;
-    height: 600px;
-}
 .jp-OutputArea-executeResult > img, .jp-OutputArea-output > img { /* formatting for HoloViews image outputs */
     margin: 0 !important;
+}
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
 }
 .slide-number {
     background-color: transparent !important;
@@ -214,7 +213,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -268,6 +268,15 @@ require(
 
             // make sure that responsive Bokeh plots don't outgrow their containers
             $('section.present').find('.bk-root').parent().css('max-width', '95%');
+
+            // resize videos based on their aspect ratios (avoid introducing whitespace)
+            const video = $('section.present').find('.jp-OutputArea-executeResult video');
+            const aspectRatio = video.width() / video.height();
+            const videoWidth = 900;
+            video.css('width', `${videoWidth}px`).css('height', `${videoWidth / aspectRatio}px`);
+
+            // hide some of empty space above the logos when enabling a plotting extension
+            $('section.present').find('.jp-RenderedJavaScript').parent().css('height', '0px');
         }
 
         // check and set the scrolling slide every time the slide change
@@ -296,6 +305,26 @@ require(
                 () => { window.location = `#/${id}`; }
             );
         }
+
+        // fix any collisions in the clip-path introduced from reproducible SVG plots
+        // that cause plot components not to render (clipPath objects with duplicate IDs)
+        const clipPathIds = {};
+        $('clipPath').each((index, element) => {
+            const oldId = $(element).attr('id');
+            if (oldId in clipPathIds) {
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
+                const newId = `${oldId}${clipPathIds[oldId]}`;
+                $(element).attr('id', newId);
+                $(element).closest('svg').find('[clip-path]').each((index, item) => {
+                    if ($(item).attr('clip-path') === `url(#${oldId})`) {
+                        $(item).attr('clip-path', `url(#${newId})`);
+                    }
+                });
+                clipPathIds[oldId] += 1;
+            }
+            else clipPathIds[oldId] = 1;
+        });
     }
 );
 </script>
