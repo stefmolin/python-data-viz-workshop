@@ -9,7 +9,6 @@ import sys
 import yaml
 
 
-
 def _print_version_ok(item):
     """
     Print an OK message for version check.
@@ -85,19 +84,41 @@ def run_env_check(raise_exc=False):
     try:
         required_version = requirements.pop('python')
         python_version = sys.version_info
-        for component, value in zip(
-            ['major', 'minor', 'micro'], required_version.split('.')
-        ):
-            if getattr(python_version, component) != int(value):
+        base_python_version = Version(
+            f'{python_version.major}.{python_version.minor}.{python_version.micro}'
+        )
+        if isinstance(required_version, list):
+            min_version, max_version = (
+                Version(version_str) for version_str in required_version
+            )
+            if (
+                min_version > base_python_version
+                or (
+                    max_version and base_python_version > max_version
+                )
+            ):
                 print(f'Using Python at {sys.prefix}:\n-> {sys.version}')
                 _print_failure(
                     'Python',
-                    required_version,
-                    f'{python_version.major}.{python_version.minor}'
+                    f'>= {min_version}{f" and <= {max_version}" if max_version else ""}',
+                    base_python_version
                 )
-                break
+            else:
+                _print_version_ok('Python')
         else:
-            _print_version_ok('Python')
+            for component, value in zip(
+                ['major', 'minor', 'micro'], required_version.split('.')
+            ):
+                if getattr(python_version, component) != int(value):
+                    print(f'Using Python at {sys.prefix}:\n-> {sys.version}')
+                    _print_failure(
+                        'Python',
+                        required_version,
+                        f'{python_version.major}.{python_version.minor}'
+                    )
+                    break
+            else:
+                _print_version_ok('Python')
     except KeyError:
         pass
 
