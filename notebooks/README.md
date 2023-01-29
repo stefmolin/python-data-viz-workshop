@@ -9,5 +9,5 @@ This directory contains the notebooks for following along with the session. You 
 | 2: Moving Beyond Static Visualizations | `2-animations.ipynb` |
 | 3: Building Interactive Visualizations for Data Exploration | `3-interactivity.ipynb` |
 
-**NOTE**: The `utils.py` file will be used in `0-check_your_env.ipynb`, which you will use to check your setup. It also contains the `despine()` function that we will define in the first section.
+**NOTE**: The `check_env.py` file will be used in `0-check_your_env.ipynb`, which you will use to check your setup. The `utils.py` file contains the `despine()` function that we will define in the first section along with a function for configuring our plotting backend.
 
