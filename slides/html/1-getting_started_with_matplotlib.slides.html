@@ -20980,7 +20980,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x158a088b0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x12fd04af0&gt;]</pre>
 </div>
 
 </div>
@@ -23770,7 +23770,7 @@ L 473.325 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PolyCollection at 0x158a2bfd0&gt;</pre>
+<pre>&lt;matplotlib.collections.PolyCollection at 0x12e127100&gt;</pre>
 </div>
 
 </div>
@@ -48777,7 +48777,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x15d13d510&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x165da9420&gt;]</pre>
 </div>
 
 </div>
@@ -49547,7 +49547,7 @@ L 541.85 7.2
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x15cc440a0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1659740a0&gt;]</pre>
 </div>
 
 </div>
@@ -50261,13 +50261,14 @@ L 541.85 7.2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="3.-Add-the-best-fit-lines.">3. Add the best fit lines.<a class="anchor-link" href="#3.-Add-the-best-fit-lines.">&#182;</a></h4><p>We will use NumPy to obtain the best fit lines, which will be a first degree and a second degree polynomial. The <code>polyfit()</code> function fits a polynomial of the specified degree to our data and <code>poly1d()</code> instantiates a polynomial that we can evaluate at different x values to obtain the y values for the best fit line:</p>
+<h4 id="3.-Add-the-best-fit-lines.">3. Add the best fit lines.<a class="anchor-link" href="#3.-Add-the-best-fit-lines.">&#182;</a></h4><p>We will use NumPy to obtain the best fit lines, which will be a first degree and a second degree polynomial. The <code>Polynomial.fit()</code> method fits a polynomial of the specified degree to our data and returns a <a href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.html">Polynomial instance</a> that we can evaluate at different x values to obtain the y values for the best fit line:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">degree</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="p">,</span> <span class="n">degree</span>
 <span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 100 evenly-spaced points along the domain</span>
 </pre></div>
 
 </div>
@@ -50299,11 +50300,10 @@ L 541.85 7.2
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">degree</span><span class="p">,</span> <span class="n">linestyle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;dashed&#39;</span><span class="p">]):</span>
-    <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="p">,</span> <span class="n">degree</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">poly</span><span class="p">(</span><span class="n">x_axis_dates</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">degree</span><span class="p">,</span> 
-        <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">x_axis_dates</span><span class="p">,</span> <span class="n">stackoverflow_monthly</span><span class="o">.</span><span class="n">matplotlib</span><span class="p">,</span> <span class="n">degree</span>
     <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">poly</span><span class="o">.</span><span class="n">linspace</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="n">degree</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -50985,33 +50985,207 @@ z
    </g>
    <g id="line2d_15">
     <path d="M 62.477273 165.96 
-L 519.022727 48.981915 
+L 67.088843 164.778403 
+L 71.700413 163.596806 
+L 76.311983 162.41521 
+L 80.923554 161.233613 
+L 85.535124 160.052016 
+L 90.146694 158.870419 
+L 94.758264 157.688822 
+L 99.369835 156.507225 
+L 103.981405 155.325629 
+L 108.592975 154.144032 
+L 113.204545 152.962435 
+L 117.816116 151.780838 
+L 122.427686 150.599241 
+L 127.039256 149.417645 
+L 131.650826 148.236048 
+L 136.262397 147.054451 
+L 140.873967 145.872854 
+L 145.485537 144.691257 
+L 150.097107 143.50966 
+L 154.708678 142.328064 
+L 159.320248 141.146467 
+L 163.931818 139.96487 
+L 168.543388 138.783273 
+L 173.154959 137.601676 
+L 177.766529 136.42008 
+L 182.378099 135.238483 
+L 186.989669 134.056886 
+L 191.60124 132.875289 
+L 196.21281 131.693692 
+L 200.82438 130.512095 
+L 205.43595 129.330499 
+L 210.047521 128.148902 
+L 214.659091 126.967305 
+L 219.270661 125.785708 
+L 223.882231 124.604111 
+L 228.493802 123.422515 
+L 233.105372 122.240918 
+L 237.716942 121.059321 
+L 242.328512 119.877724 
+L 246.940083 118.696127 
+L 251.551653 117.51453 
+L 256.163223 116.332934 
+L 260.774793 115.151337 
+L 265.386364 113.96974 
+L 269.997934 112.788143 
+L 274.609504 111.606546 
+L 279.221074 110.42495 
+L 283.832645 109.243353 
+L 288.444215 108.061756 
+L 293.055785 106.880159 
+L 297.667355 105.698562 
+L 302.278926 104.516965 
+L 306.890496 103.335369 
+L 311.502066 102.153772 
+L 316.113636 100.972175 
+L 320.725207 99.790578 
+L 325.336777 98.608981 
+L 329.948347 97.427385 
+L 334.559917 96.245788 
+L 339.171488 95.064191 
+L 343.783058 93.882594 
+L 348.394628 92.700997 
+L 353.006198 91.5194 
+L 357.617769 90.337804 
+L 362.229339 89.156207 
+L 366.840909 87.97461 
+L 371.452479 86.793013 
+L 376.06405 85.611416 
+L 380.67562 84.42982 
+L 385.28719 83.248223 
+L 389.89876 82.066626 
+L 394.510331 80.885029 
+L 399.121901 79.703432 
+L 403.733471 78.521835 
+L 408.345041 77.340239 
+L 412.956612 76.158642 
+L 417.568182 74.977045 
+L 422.179752 73.795448 
+L 426.791322 72.613851 
+L 431.402893 71.432255 
+L 436.014463 70.250658 
+L 440.626033 69.069061 
+L 445.237603 67.887464 
+L 449.849174 66.705867 
+L 454.460744 65.52427 
+L 459.072314 64.342674 
+L 463.683884 63.161077 
+L 468.295455 61.97948 
+L 472.907025 60.797883 
+L 477.518595 59.616286 
+L 482.130165 58.43469 
+L 486.741736 57.253093 
+L 491.353306 56.071496 
+L 495.964876 54.889899 
+L 500.576446 53.708302 
+L 505.188017 52.526705 
+L 509.799587 51.345109 
+L 514.411157 50.163512 
 L 519.022727 48.981915 
 " clip-path="url(#p15f8386bdf)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="line2d_16">
     <path d="M 62.477273 157.871342 
-L 82.99182 154.711877 
-L 103.699902 151.322463 
-L 124.214449 147.766452 
-L 145.019297 143.95857 
-L 165.533845 140.005082 
-L 186.14516 135.834206 
-L 206.853241 131.443134 
-L 230.270791 126.235261 
-L 253.785107 120.747125 
-L 274.493189 115.699245 
-L 298.007505 109.723502 
-L 318.715586 104.246206 
-L 342.32667 97.755722 
-L 365.744219 91.06023 
-L 389.452069 84.019789 
-L 412.966386 76.77648 
-L 436.383936 69.305301 
-L 460.091786 61.479558 
-L 483.702869 53.423808 
-L 507.120419 45.17588 
-L 519.022727 40.885189 
+L 67.088843 157.178304 
+L 71.700413 156.475294 
+L 76.311983 155.762312 
+L 80.923554 155.039358 
+L 85.535124 154.306431 
+L 90.146694 153.563532 
+L 94.758264 152.810661 
+L 99.369835 152.047818 
+L 103.981405 151.275002 
+L 108.592975 150.492214 
+L 113.204545 149.699454 
+L 117.816116 148.896721 
+L 122.427686 148.084017 
+L 127.039256 147.26134 
+L 131.650826 146.428691 
+L 136.262397 145.586069 
+L 140.873967 144.733475 
+L 145.485537 143.870909 
+L 150.097107 142.998371 
+L 154.708678 142.11586 
+L 159.320248 141.223378 
+L 163.931818 140.320923 
+L 168.543388 139.408495 
+L 173.154959 138.486096 
+L 177.766529 137.553724 
+L 182.378099 136.61138 
+L 186.989669 135.659064 
+L 191.60124 134.696775 
+L 196.21281 133.724514 
+L 200.82438 132.742281 
+L 205.43595 131.750076 
+L 210.047521 130.747898 
+L 214.659091 129.735748 
+L 219.270661 128.713626 
+L 223.882231 127.681531 
+L 228.493802 126.639465 
+L 233.105372 125.587426 
+L 237.716942 124.525415 
+L 242.328512 123.453431 
+L 246.940083 122.371475 
+L 251.551653 121.279547 
+L 256.163223 120.177647 
+L 260.774793 119.065775 
+L 265.386364 117.94393 
+L 269.997934 116.812113 
+L 274.609504 115.670324 
+L 279.221074 114.518562 
+L 283.832645 113.356828 
+L 288.444215 112.185122 
+L 293.055785 111.003444 
+L 297.667355 109.811793 
+L 302.278926 108.61017 
+L 306.890496 107.398575 
+L 311.502066 106.177008 
+L 316.113636 104.945468 
+L 320.725207 103.703957 
+L 325.336777 102.452472 
+L 329.948347 101.191016 
+L 334.559917 99.919587 
+L 339.171488 98.638186 
+L 343.783058 97.346813 
+L 348.394628 96.045468 
+L 353.006198 94.73415 
+L 357.617769 93.41286 
+L 362.229339 92.081598 
+L 366.840909 90.740364 
+L 371.452479 89.389157 
+L 376.06405 88.027978 
+L 380.67562 86.656827 
+L 385.28719 85.275703 
+L 389.89876 83.884607 
+L 394.510331 82.483539 
+L 399.121901 81.072499 
+L 403.733471 79.651486 
+L 408.345041 78.220502 
+L 412.956612 76.779545 
+L 417.568182 75.328615 
+L 422.179752 73.867714 
+L 426.791322 72.39684 
+L 431.402893 70.915994 
+L 436.014463 69.425175 
+L 440.626033 67.924385 
+L 445.237603 66.413622 
+L 449.849174 64.892887 
+L 454.460744 63.362179 
+L 459.072314 61.8215 
+L 463.683884 60.270848 
+L 468.295455 58.710224 
+L 472.907025 57.139627 
+L 477.518595 55.559058 
+L 482.130165 53.968517 
+L 486.741736 52.368004 
+L 491.353306 50.757519 
+L 495.964876 49.137061 
+L 500.576446 47.506631 
+L 505.188017 45.866229 
+L 509.799587 44.215854 
+L 514.411157 42.555508 
 L 519.022727 40.885189 
 " clip-path="url(#p15f8386bdf)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #ff7f0e; stroke-opacity: 0.9; stroke-width: 2"/>
    </g>
@@ -51086,10 +51260,13 @@ L 541.85 7.2
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_best_fit_lines</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">degree</span><span class="p">,</span> <span class="n">linestyle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;dashed&#39;</span><span class="p">]):</span>
-        <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">degree</span><span class="p">))</span>
+        <span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">x</span><span class="p">,</span> <span class="n">poly</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">degree</span><span class="p">,</span> 
-            <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span>
+            <span class="o">*</span><span class="n">poly</span><span class="o">.</span><span class="n">linspace</span><span class="p">(),</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">degree</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">ax</span>
 </pre></div>
@@ -52162,35 +52339,207 @@ z
    </g>
    <g id="line2d_14">
     <path d="M 53.328125 217.290582 
-L 531.613839 83.531283 
+L 58.159294 215.939478 
+L 62.990463 214.588374 
+L 67.821631 213.23727 
+L 72.6528 211.886166 
+L 77.483969 210.535062 
+L 82.315138 209.183958 
+L 87.146307 207.832854 
+L 91.977476 206.48175 
+L 96.808644 205.130646 
+L 101.639813 203.779542 
+L 106.470982 202.428438 
+L 111.302151 201.077334 
+L 116.13332 199.72623 
+L 120.964489 198.375126 
+L 125.795657 197.024022 
+L 130.626826 195.672918 
+L 135.457995 194.321814 
+L 140.289164 192.97071 
+L 145.120333 191.619606 
+L 149.951502 190.268502 
+L 154.78267 188.917398 
+L 159.613839 187.566294 
+L 164.445008 186.21519 
+L 169.276177 184.864086 
+L 174.107346 183.512982 
+L 178.938515 182.161878 
+L 183.769683 180.810773 
+L 188.600852 179.459669 
+L 193.432021 178.108565 
+L 198.26319 176.757461 
+L 203.094359 175.406357 
+L 207.925528 174.055253 
+L 212.756696 172.704149 
+L 217.587865 171.353045 
+L 222.419034 170.001941 
+L 227.250203 168.650837 
+L 232.081372 167.299733 
+L 236.912541 165.948629 
+L 241.743709 164.597525 
+L 246.574878 163.246421 
+L 251.406047 161.895317 
+L 256.237216 160.544213 
+L 261.068385 159.193109 
+L 265.899554 157.842005 
+L 270.730722 156.490901 
+L 275.561891 155.139797 
+L 280.39306 153.788693 
+L 285.224229 152.437589 
+L 290.055398 151.086485 
+L 294.886567 149.735381 
+L 299.717735 148.384277 
+L 304.548904 147.033173 
+L 309.380073 145.682069 
+L 314.211242 144.330965 
+L 319.042411 142.979861 
+L 323.87358 141.628757 
+L 328.704748 140.277653 
+L 333.535917 138.926549 
+L 338.367086 137.575445 
+L 343.198255 136.224341 
+L 348.029424 134.873237 
+L 352.860593 133.522132 
+L 357.691761 132.171028 
+L 362.52293 130.819924 
+L 367.354099 129.46882 
+L 372.185268 128.117716 
+L 377.016437 126.766612 
+L 381.847606 125.415508 
+L 386.678774 124.064404 
+L 391.509943 122.7133 
+L 396.341112 121.362196 
+L 401.172281 120.011092 
+L 406.00345 118.659988 
+L 410.834619 117.308884 
+L 415.665787 115.95778 
+L 420.496956 114.606676 
+L 425.328125 113.255572 
+L 430.159294 111.904468 
+L 434.990463 110.553364 
+L 439.821631 109.20226 
+L 444.6528 107.851156 
+L 449.483969 106.500052 
+L 454.315138 105.148948 
+L 459.146307 103.797844 
+L 463.977476 102.44674 
+L 468.808644 101.095636 
+L 473.639813 99.744532 
+L 478.470982 98.393428 
+L 483.302151 97.042324 
+L 488.13332 95.69122 
+L 492.964489 94.340116 
+L 497.795657 92.989012 
+L 502.626826 91.637908 
+L 507.457995 90.286804 
+L 512.289164 88.9357 
+L 517.120333 87.584596 
+L 521.951502 86.233491 
+L 526.78267 84.882387 
 L 531.613839 83.531283 
 " clip-path="url(#pb99993b608)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="line2d_15">
     <path d="M 53.328125 208.041557 
-L 74.819556 204.428848 
-L 96.513736 200.553202 
-L 118.005167 196.48706 
-L 139.800722 192.132914 
-L 161.292153 187.612275 
-L 182.884959 182.84306 
-L 204.579139 177.822063 
-L 226.07057 172.621275 
-L 247.764751 167.142567 
-L 269.256182 161.488345 
-L 290.747613 155.608472 
-L 312.441793 149.444273 
-L 334.034599 143.080557 
-L 355.728779 136.457573 
-L 377.22021 129.66977 
-L 399.015765 122.555448 
-L 420.507196 115.313147 
-L 441.998627 107.845194 
-L 463.692807 100.077933 
-L 485.285613 92.118647 
-L 506.979793 83.892602 
-L 528.471224 75.516719 
-L 531.613839 74.273033 
+L 58.159294 207.249099 
+L 62.990463 206.445238 
+L 67.821631 205.629975 
+L 72.6528 204.803308 
+L 77.483969 203.965239 
+L 82.315138 203.115766 
+L 87.146307 202.254891 
+L 91.977476 201.382613 
+L 96.808644 200.498933 
+L 101.639813 199.603849 
+L 106.470982 198.697363 
+L 111.302151 197.779473 
+L 116.13332 196.850181 
+L 120.964489 195.909486 
+L 125.795657 194.957388 
+L 130.626826 193.993888 
+L 135.457995 193.018984 
+L 140.289164 192.032678 
+L 145.120333 191.034969 
+L 149.951502 190.025857 
+L 154.78267 189.005342 
+L 159.613839 187.973424 
+L 164.445008 186.930104 
+L 169.276177 185.87538 
+L 174.107346 184.809254 
+L 178.938515 183.731725 
+L 183.769683 182.642793 
+L 188.600852 181.542458 
+L 193.432021 180.430721 
+L 198.26319 179.30758 
+L 203.094359 178.173037 
+L 207.925528 177.027091 
+L 212.756696 175.869742 
+L 217.587865 174.70099 
+L 222.419034 173.520836 
+L 227.250203 172.329278 
+L 232.081372 171.126318 
+L 236.912541 169.911955 
+L 241.743709 168.686189 
+L 246.574878 167.44902 
+L 251.406047 166.200448 
+L 256.237216 164.940474 
+L 261.068385 163.669097 
+L 265.899554 162.386316 
+L 270.730722 161.092133 
+L 275.561891 159.786548 
+L 280.39306 158.469559 
+L 285.224229 157.141167 
+L 290.055398 155.801373 
+L 294.886567 154.450176 
+L 299.717735 153.087576 
+L 304.548904 151.713573 
+L 309.380073 150.328167 
+L 314.211242 148.931358 
+L 319.042411 147.523147 
+L 323.87358 146.103533 
+L 328.704748 144.672516 
+L 333.535917 143.230096 
+L 338.367086 141.776273 
+L 343.198255 140.311047 
+L 348.029424 138.834419 
+L 352.860593 137.346388 
+L 357.691761 135.846953 
+L 362.52293 134.336116 
+L 367.354099 132.813877 
+L 372.185268 131.280234 
+L 377.016437 129.735188 
+L 381.847606 128.17874 
+L 386.678774 126.610889 
+L 391.509943 125.031635 
+L 396.341112 123.440978 
+L 401.172281 121.838918 
+L 406.00345 120.225456 
+L 410.834619 118.60059 
+L 415.665787 116.964322 
+L 420.496956 115.316651 
+L 425.328125 113.657577 
+L 430.159294 111.9871 
+L 434.990463 110.305221 
+L 439.821631 108.611938 
+L 444.6528 106.907253 
+L 449.483969 105.191165 
+L 454.315138 103.463674 
+L 459.146307 101.72478 
+L 463.977476 99.974484 
+L 468.808644 98.212784 
+L 473.639813 96.439682 
+L 478.470982 94.655177 
+L 483.302151 92.859269 
+L 488.13332 91.051958 
+L 492.964489 89.233244 
+L 497.795657 87.403128 
+L 502.626826 85.561608 
+L 507.457995 83.708686 
+L 512.289164 81.844361 
+L 517.120333 79.968633 
+L 521.951502 78.081502 
+L 526.78267 76.182969 
 L 531.613839 74.273033 
 " clip-path="url(#pb99993b608)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #ff7f0e; stroke-opacity: 0.9; stroke-width: 2"/>
    </g>
@@ -54033,35 +54382,207 @@ z
    </g>
    <g id="line2d_19">
     <path d="M 56.50625 217.290582 
-L 534.791964 83.531283 
+L 61.337419 215.939478 
+L 66.168588 214.588374 
+L 70.999756 213.23727 
+L 75.830925 211.886166 
+L 80.662094 210.535062 
+L 85.493263 209.183958 
+L 90.324432 207.832854 
+L 95.155601 206.48175 
+L 99.986769 205.130646 
+L 104.817938 203.779542 
+L 109.649107 202.428438 
+L 114.480276 201.077334 
+L 119.311445 199.72623 
+L 124.142614 198.375126 
+L 128.973782 197.024022 
+L 133.804951 195.672918 
+L 138.63612 194.321814 
+L 143.467289 192.97071 
+L 148.298458 191.619606 
+L 153.129627 190.268502 
+L 157.960795 188.917398 
+L 162.791964 187.566294 
+L 167.623133 186.21519 
+L 172.454302 184.864086 
+L 177.285471 183.512982 
+L 182.11664 182.161878 
+L 186.947808 180.810773 
+L 191.778977 179.459669 
+L 196.610146 178.108565 
+L 201.441315 176.757461 
+L 206.272484 175.406357 
+L 211.103653 174.055253 
+L 215.934821 172.704149 
+L 220.76599 171.353045 
+L 225.597159 170.001941 
+L 230.428328 168.650837 
+L 235.259497 167.299733 
+L 240.090666 165.948629 
+L 244.921834 164.597525 
+L 249.753003 163.246421 
+L 254.584172 161.895317 
+L 259.415341 160.544213 
+L 264.24651 159.193109 
+L 269.077679 157.842005 
+L 273.908847 156.490901 
+L 278.740016 155.139797 
+L 283.571185 153.788693 
+L 288.402354 152.437589 
+L 293.233523 151.086485 
+L 298.064692 149.735381 
+L 302.89586 148.384277 
+L 307.727029 147.033173 
+L 312.558198 145.682069 
+L 317.389367 144.330965 
+L 322.220536 142.979861 
+L 327.051705 141.628757 
+L 331.882873 140.277653 
+L 336.714042 138.926549 
+L 341.545211 137.575445 
+L 346.37638 136.224341 
+L 351.207549 134.873237 
+L 356.038718 133.522132 
+L 360.869886 132.171028 
+L 365.701055 130.819924 
+L 370.532224 129.46882 
+L 375.363393 128.117716 
+L 380.194562 126.766612 
+L 385.025731 125.415508 
+L 389.856899 124.064404 
+L 394.688068 122.7133 
+L 399.519237 121.362196 
+L 404.350406 120.011092 
+L 409.181575 118.659988 
+L 414.012744 117.308884 
+L 418.843912 115.95778 
+L 423.675081 114.606676 
+L 428.50625 113.255572 
+L 433.337419 111.904468 
+L 438.168588 110.553364 
+L 442.999756 109.20226 
+L 447.830925 107.851156 
+L 452.662094 106.500052 
+L 457.493263 105.148948 
+L 462.324432 103.797844 
+L 467.155601 102.44674 
+L 471.986769 101.095636 
+L 476.817938 99.744532 
+L 481.649107 98.393428 
+L 486.480276 97.042324 
+L 491.311445 95.69122 
+L 496.142614 94.340116 
+L 500.973782 92.989012 
+L 505.804951 91.637908 
+L 510.63612 90.286804 
+L 515.467289 88.9357 
+L 520.298458 87.584596 
+L 525.129627 86.233491 
+L 529.960795 84.882387 
 L 534.791964 83.531283 
 " clip-path="url(#p1bbe738c30)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.9; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="line2d_20">
     <path d="M 56.50625 208.041557 
-L 77.997681 204.428848 
-L 99.691861 200.553202 
-L 121.183292 196.48706 
-L 142.978847 192.132914 
-L 164.470278 187.612275 
-L 186.063084 182.84306 
-L 207.757264 177.822063 
-L 229.248695 172.621275 
-L 250.942876 167.142567 
-L 272.434307 161.488345 
-L 293.925738 155.608472 
-L 315.619918 149.444273 
-L 337.212724 143.080557 
-L 358.906904 136.457573 
-L 380.398335 129.66977 
-L 402.19389 122.555448 
-L 423.685321 115.313147 
-L 445.176752 107.845194 
-L 466.870932 100.077933 
-L 488.463738 92.118647 
-L 510.157918 83.892602 
-L 531.649349 75.516719 
-L 534.791964 74.273033 
+L 61.337419 207.249099 
+L 66.168588 206.445238 
+L 70.999756 205.629975 
+L 75.830925 204.803308 
+L 80.662094 203.965239 
+L 85.493263 203.115766 
+L 90.324432 202.254891 
+L 95.155601 201.382613 
+L 99.986769 200.498933 
+L 104.817938 199.603849 
+L 109.649107 198.697363 
+L 114.480276 197.779473 
+L 119.311445 196.850181 
+L 124.142614 195.909486 
+L 128.973782 194.957388 
+L 133.804951 193.993888 
+L 138.63612 193.018984 
+L 143.467289 192.032678 
+L 148.298458 191.034969 
+L 153.129627 190.025857 
+L 157.960795 189.005342 
+L 162.791964 187.973424 
+L 167.623133 186.930104 
+L 172.454302 185.87538 
+L 177.285471 184.809254 
+L 182.11664 183.731725 
+L 186.947808 182.642793 
+L 191.778977 181.542458 
+L 196.610146 180.430721 
+L 201.441315 179.30758 
+L 206.272484 178.173037 
+L 211.103653 177.027091 
+L 215.934821 175.869742 
+L 220.76599 174.70099 
+L 225.597159 173.520836 
+L 230.428328 172.329278 
+L 235.259497 171.126318 
+L 240.090666 169.911955 
+L 244.921834 168.686189 
+L 249.753003 167.44902 
+L 254.584172 166.200448 
+L 259.415341 164.940474 
+L 264.24651 163.669097 
+L 269.077679 162.386316 
+L 273.908847 161.092133 
+L 278.740016 159.786548 
+L 283.571185 158.469559 
+L 288.402354 157.141167 
+L 293.233523 155.801373 
+L 298.064692 154.450176 
+L 302.89586 153.087576 
+L 307.727029 151.713573 
+L 312.558198 150.328167 
+L 317.389367 148.931358 
+L 322.220536 147.523147 
+L 327.051705 146.103533 
+L 331.882873 144.672516 
+L 336.714042 143.230096 
+L 341.545211 141.776273 
+L 346.37638 140.311047 
+L 351.207549 138.834419 
+L 356.038718 137.346388 
+L 360.869886 135.846953 
+L 365.701055 134.336116 
+L 370.532224 132.813877 
+L 375.363393 131.280234 
+L 380.194562 129.735188 
+L 385.025731 128.17874 
+L 389.856899 126.610889 
+L 394.688068 125.031635 
+L 399.519237 123.440978 
+L 404.350406 121.838918 
+L 409.181575 120.225456 
+L 414.012744 118.60059 
+L 418.843912 116.964322 
+L 423.675081 115.316651 
+L 428.50625 113.657577 
+L 433.337419 111.9871 
+L 438.168588 110.305221 
+L 442.999756 108.611938 
+L 447.830925 106.907253 
+L 452.662094 105.191165 
+L 457.493263 103.463674 
+L 462.324432 101.72478 
+L 467.155601 99.974484 
+L 471.986769 98.212784 
+L 476.817938 96.439682 
+L 481.649107 94.655177 
+L 486.480276 92.859269 
+L 491.311445 91.051958 
+L 496.142614 89.233244 
+L 500.973782 87.403128 
+L 505.804951 85.561608 
+L 510.63612 83.708686 
+L 515.467289 81.844361 
+L 520.298458 79.968633 
+L 525.129627 78.081502 
+L 529.960795 76.182969 
 L 534.791964 74.273033 
 " clip-path="url(#p1bbe738c30)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #ff7f0e; stroke-opacity: 0.9; stroke-width: 2"/>
    </g>
@@ -57234,10 +57755,10 @@ L 108 36
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.collections.PolyCollection at 0x1591706a0&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x159170a30&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x159170d90&gt;,
- &lt;matplotlib.collections.PolyCollection at 0x1591710f0&gt;]</pre>
+<pre>[&lt;matplotlib.collections.PolyCollection at 0x1642d9ae0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x1642d9e40&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x1642da1a0&gt;,
+ &lt;matplotlib.collections.PolyCollection at 0x1642da470&gt;]</pre>
 </div>
 
 </div>
@@ -66848,7 +67369,7 @@ z
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.lines.Line2D at 0x13ed6bb50&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x12c000fa0&gt;</pre>
 </div>
 
 </div>
@@ -86756,132 +87277,132 @@ z
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <style type="text/css">
-#T_07910_row0_col0, #T_07910_row0_col6, #T_07910_row1_col1, #T_07910_row1_col2, #T_07910_row2_col0, #T_07910_row2_col1, #T_07910_row2_col2, #T_07910_row2_col3, #T_07910_row2_col4, #T_07910_row2_col7, #T_07910_row3_col2, #T_07910_row3_col3, #T_07910_row3_col4, #T_07910_row4_col0, #T_07910_row4_col1, #T_07910_row4_col2, #T_07910_row4_col3, #T_07910_row4_col4, #T_07910_row5_col0, #T_07910_row5_col1, #T_07910_row5_col3, #T_07910_row5_col4, #T_07910_row5_col5, #T_07910_row5_col7, #T_07910_row6_col0, #T_07910_row6_col1, #T_07910_row6_col2, #T_07910_row6_col3, #T_07910_row6_col4, #T_07910_row6_col6, #T_07910_row6_col7, #T_07910_row7_col0, #T_07910_row7_col1, #T_07910_row7_col2, #T_07910_row7_col6, #T_07910_row7_col7, #T_07910_row8_col0, #T_07910_row8_col1, #T_07910_row8_col3, #T_07910_row8_col4, #T_07910_row8_col7, #T_07910_row8_col8 {
+#T_83ab7_row0_col0, #T_83ab7_row0_col6, #T_83ab7_row1_col1, #T_83ab7_row1_col2, #T_83ab7_row2_col0, #T_83ab7_row2_col1, #T_83ab7_row2_col2, #T_83ab7_row2_col3, #T_83ab7_row2_col4, #T_83ab7_row2_col7, #T_83ab7_row3_col2, #T_83ab7_row3_col3, #T_83ab7_row3_col4, #T_83ab7_row4_col0, #T_83ab7_row4_col1, #T_83ab7_row4_col2, #T_83ab7_row4_col3, #T_83ab7_row4_col4, #T_83ab7_row5_col0, #T_83ab7_row5_col1, #T_83ab7_row5_col3, #T_83ab7_row5_col4, #T_83ab7_row5_col5, #T_83ab7_row5_col7, #T_83ab7_row6_col0, #T_83ab7_row6_col1, #T_83ab7_row6_col2, #T_83ab7_row6_col3, #T_83ab7_row6_col4, #T_83ab7_row6_col6, #T_83ab7_row6_col7, #T_83ab7_row7_col0, #T_83ab7_row7_col1, #T_83ab7_row7_col2, #T_83ab7_row7_col6, #T_83ab7_row7_col7, #T_83ab7_row8_col0, #T_83ab7_row8_col1, #T_83ab7_row8_col3, #T_83ab7_row8_col4, #T_83ab7_row8_col7, #T_83ab7_row8_col8 {
   background-color: #fff7fb;
   color: #000000;
 }
-#T_07910_row0_col1 {
+#T_83ab7_row0_col1 {
   background-color: #faf3f9;
   color: #000000;
 }
-#T_07910_row0_col2, #T_07910_row7_col5 {
+#T_83ab7_row0_col2, #T_83ab7_row7_col5 {
   background-color: #fcf4fa;
   color: #000000;
 }
-#T_07910_row0_col3 {
+#T_83ab7_row0_col3 {
   background-color: #60a1ca;
   color: #f1f1f1;
 }
-#T_07910_row0_col4, #T_07910_row1_col0, #T_07910_row3_col1, #T_07910_row7_col3 {
+#T_83ab7_row0_col4, #T_83ab7_row1_col0, #T_83ab7_row3_col1, #T_83ab7_row7_col3 {
   background-color: #f8f1f8;
   color: #000000;
 }
-#T_07910_row0_col5 {
+#T_83ab7_row0_col5 {
   background-color: #fbf4f9;
   color: #000000;
 }
-#T_07910_row0_col7 {
+#T_83ab7_row0_col7 {
   background-color: #eee9f3;
   color: #000000;
 }
-#T_07910_row0_col8 {
+#T_83ab7_row0_col8 {
   background-color: #f0eaf4;
   color: #000000;
 }
-#T_07910_row1_col3 {
+#T_83ab7_row1_col3 {
   background-color: #8fb4d6;
   color: #000000;
 }
-#T_07910_row1_col4, #T_07910_row5_col2, #T_07910_row6_col5 {
+#T_83ab7_row1_col4, #T_83ab7_row5_col2, #T_83ab7_row6_col5 {
   background-color: #f7f0f7;
   color: #000000;
 }
-#T_07910_row1_col5 {
+#T_83ab7_row1_col5 {
   background-color: #f9f2f8;
   color: #000000;
 }
-#T_07910_row1_col6, #T_07910_row3_col6, #T_07910_row4_col6, #T_07910_row4_col7, #T_07910_row8_col2 {
+#T_83ab7_row1_col6, #T_83ab7_row3_col6, #T_83ab7_row4_col6, #T_83ab7_row4_col7, #T_83ab7_row8_col2 {
   background-color: #fef6fa;
   color: #000000;
 }
-#T_07910_row1_col7 {
+#T_83ab7_row1_col7 {
   background-color: #e9e5f1;
   color: #000000;
 }
-#T_07910_row1_col8, #T_07910_row5_col6, #T_07910_row7_col8 {
+#T_83ab7_row1_col8, #T_83ab7_row5_col6, #T_83ab7_row7_col8 {
   background-color: #f2ecf5;
   color: #000000;
 }
-#T_07910_row2_col5 {
+#T_83ab7_row2_col5 {
   background-color: #81aed2;
   color: #f1f1f1;
 }
-#T_07910_row2_col6 {
+#T_83ab7_row2_col6 {
   background-color: #fdf5fa;
   color: #000000;
 }
-#T_07910_row2_col8 {
+#T_83ab7_row2_col8 {
   background-color: #d4d4e8;
   color: #000000;
 }
-#T_07910_row3_col0 {
+#T_83ab7_row3_col0 {
   background-color: #f1ebf5;
   color: #000000;
 }
-#T_07910_row3_col5 {
+#T_83ab7_row3_col5 {
   background-color: #fbf3f9;
   color: #000000;
 }
-#T_07910_row3_col7 {
+#T_83ab7_row3_col7 {
   background-color: #a7bddb;
   color: #000000;
 }
-#T_07910_row3_col8 {
+#T_83ab7_row3_col8 {
   background-color: #f5eff6;
   color: #000000;
 }
-#T_07910_row4_col5 {
+#T_83ab7_row4_col5 {
   background-color: #ede8f3;
   color: #000000;
 }
-#T_07910_row4_col8 {
+#T_83ab7_row4_col8 {
   background-color: #d0d1e6;
   color: #000000;
 }
-#T_07910_row5_col8 {
+#T_83ab7_row5_col8 {
   background-color: #eae6f1;
   color: #000000;
 }
-#T_07910_row6_col8 {
+#T_83ab7_row6_col8 {
   background-color: #e3e0ee;
   color: #000000;
 }
-#T_07910_row7_col4 {
+#T_83ab7_row7_col4 {
   background-color: #fef6fb;
   color: #000000;
 }
-#T_07910_row8_col5 {
+#T_83ab7_row8_col5 {
   background-color: #faf2f8;
   color: #000000;
 }
-#T_07910_row8_col6 {
+#T_83ab7_row8_col6 {
   background-color: #f4eef6;
   color: #000000;
 }
 </style>
-<table id="T_07910">
+<table id="T_83ab7">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_07910_level0_col0" class="col_heading level0 col0" >hvplot</th>
-      <th id="T_07910_level0_col1" class="col_heading level0 col1" >geoviews</th>
-      <th id="T_07910_level0_col2" class="col_heading level0 col2" >seaborn</th>
-      <th id="T_07910_level0_col3" class="col_heading level0 col3" >holoviews</th>
-      <th id="T_07910_level0_col4" class="col_heading level0 col4" >geopandas</th>
-      <th id="T_07910_level0_col5" class="col_heading level0 col5" >matplotlib</th>
-      <th id="T_07910_level0_col6" class="col_heading level0 col6" >numpy</th>
-      <th id="T_07910_level0_col7" class="col_heading level0 col7" >bokeh</th>
-      <th id="T_07910_level0_col8" class="col_heading level0 col8" >pandas</th>
+      <th id="T_83ab7_level0_col0" class="col_heading level0 col0" >hvplot</th>
+      <th id="T_83ab7_level0_col1" class="col_heading level0 col1" >geoviews</th>
+      <th id="T_83ab7_level0_col2" class="col_heading level0 col2" >seaborn</th>
+      <th id="T_83ab7_level0_col3" class="col_heading level0 col3" >holoviews</th>
+      <th id="T_83ab7_level0_col4" class="col_heading level0 col4" >geopandas</th>
+      <th id="T_83ab7_level0_col5" class="col_heading level0 col5" >matplotlib</th>
+      <th id="T_83ab7_level0_col6" class="col_heading level0 col6" >numpy</th>
+      <th id="T_83ab7_level0_col7" class="col_heading level0 col7" >bokeh</th>
+      <th id="T_83ab7_level0_col8" class="col_heading level0 col8" >pandas</th>
     </tr>
     <tr>
       <th class="index_name level0" >library</th>
@@ -86898,112 +87419,112 @@ z
   </thead>
   <tbody>
     <tr>
-      <th id="T_07910_level0_row0" class="row_heading level0 row0" >hvplot</th>
-      <td id="T_07910_row0_col0" class="data row0 col0" >0.000000</td>
-      <td id="T_07910_row0_col1" class="data row0 col1" >0.032609</td>
-      <td id="T_07910_row0_col2" class="data row0 col2" >0.021739</td>
-      <td id="T_07910_row0_col3" class="data row0 col3" >0.539855</td>
-      <td id="T_07910_row0_col4" class="data row0 col4" >0.048913</td>
-      <td id="T_07910_row0_col5" class="data row0 col5" >0.023551</td>
-      <td id="T_07910_row0_col6" class="data row0 col6" >0.000000</td>
-      <td id="T_07910_row0_col7" class="data row0 col7" >0.110507</td>
-      <td id="T_07910_row0_col8" class="data row0 col8" >0.103261</td>
+      <th id="T_83ab7_level0_row0" class="row_heading level0 row0" >hvplot</th>
+      <td id="T_83ab7_row0_col0" class="data row0 col0" >0.000000</td>
+      <td id="T_83ab7_row0_col1" class="data row0 col1" >0.032609</td>
+      <td id="T_83ab7_row0_col2" class="data row0 col2" >0.021739</td>
+      <td id="T_83ab7_row0_col3" class="data row0 col3" >0.539855</td>
+      <td id="T_83ab7_row0_col4" class="data row0 col4" >0.048913</td>
+      <td id="T_83ab7_row0_col5" class="data row0 col5" >0.023551</td>
+      <td id="T_83ab7_row0_col6" class="data row0 col6" >0.000000</td>
+      <td id="T_83ab7_row0_col7" class="data row0 col7" >0.110507</td>
+      <td id="T_83ab7_row0_col8" class="data row0 col8" >0.103261</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row1" class="row_heading level0 row1" >geoviews</th>
-      <td id="T_07910_row1_col0" class="data row1 col0" >0.047619</td>
-      <td id="T_07910_row1_col1" class="data row1 col1" >0.000000</td>
-      <td id="T_07910_row1_col2" class="data row1 col2" >0.000000</td>
-      <td id="T_07910_row1_col3" class="data row1 col3" >0.431217</td>
-      <td id="T_07910_row1_col4" class="data row1 col4" >0.058201</td>
-      <td id="T_07910_row1_col5" class="data row1 col5" >0.039683</td>
-      <td id="T_07910_row1_col6" class="data row1 col6" >0.007937</td>
-      <td id="T_07910_row1_col7" class="data row1 col7" >0.140212</td>
-      <td id="T_07910_row1_col8" class="data row1 col8" >0.084656</td>
+      <th id="T_83ab7_level0_row1" class="row_heading level0 row1" >geoviews</th>
+      <td id="T_83ab7_row1_col0" class="data row1 col0" >0.047619</td>
+      <td id="T_83ab7_row1_col1" class="data row1 col1" >0.000000</td>
+      <td id="T_83ab7_row1_col2" class="data row1 col2" >0.000000</td>
+      <td id="T_83ab7_row1_col3" class="data row1 col3" >0.431217</td>
+      <td id="T_83ab7_row1_col4" class="data row1 col4" >0.058201</td>
+      <td id="T_83ab7_row1_col5" class="data row1 col5" >0.039683</td>
+      <td id="T_83ab7_row1_col6" class="data row1 col6" >0.007937</td>
+      <td id="T_83ab7_row1_col7" class="data row1 col7" >0.140212</td>
+      <td id="T_83ab7_row1_col8" class="data row1 col8" >0.084656</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row2" class="row_heading level0 row2" >seaborn</th>
-      <td id="T_07910_row2_col0" class="data row2 col0" >0.000270</td>
-      <td id="T_07910_row2_col1" class="data row2 col1" >0.000000</td>
-      <td id="T_07910_row2_col2" class="data row2 col2" >0.000000</td>
-      <td id="T_07910_row2_col3" class="data row2 col3" >0.000135</td>
-      <td id="T_07910_row2_col4" class="data row2 col4" >0.000607</td>
-      <td id="T_07910_row2_col5" class="data row2 col5" >0.468033</td>
-      <td id="T_07910_row2_col6" class="data row2 col6" >0.015871</td>
-      <td id="T_07910_row2_col7" class="data row2 col7" >0.002001</td>
-      <td id="T_07910_row2_col8" class="data row2 col8" >0.230780</td>
+      <th id="T_83ab7_level0_row2" class="row_heading level0 row2" >seaborn</th>
+      <td id="T_83ab7_row2_col0" class="data row2 col0" >0.000270</td>
+      <td id="T_83ab7_row2_col1" class="data row2 col1" >0.000000</td>
+      <td id="T_83ab7_row2_col2" class="data row2 col2" >0.000000</td>
+      <td id="T_83ab7_row2_col3" class="data row2 col3" >0.000135</td>
+      <td id="T_83ab7_row2_col4" class="data row2 col4" >0.000607</td>
+      <td id="T_83ab7_row2_col5" class="data row2 col5" >0.468033</td>
+      <td id="T_83ab7_row2_col6" class="data row2 col6" >0.015871</td>
+      <td id="T_83ab7_row2_col7" class="data row2 col7" >0.002001</td>
+      <td id="T_83ab7_row2_col8" class="data row2 col8" >0.230780</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row3" class="row_heading level0 row3" >holoviews</th>
-      <td id="T_07910_row3_col0" class="data row3 col0" >0.091636</td>
-      <td id="T_07910_row3_col1" class="data row3 col1" >0.050123</td>
-      <td id="T_07910_row3_col2" class="data row3 col2" >0.001845</td>
-      <td id="T_07910_row3_col3" class="data row3 col3" >0.000000</td>
-      <td id="T_07910_row3_col4" class="data row3 col4" >0.003075</td>
-      <td id="T_07910_row3_col5" class="data row3 col5" >0.030750</td>
-      <td id="T_07910_row3_col6" class="data row3 col6" >0.010148</td>
-      <td id="T_07910_row3_col7" class="data row3 col7" >0.371771</td>
-      <td id="T_07910_row3_col8" class="data row3 col8" >0.066113</td>
+      <th id="T_83ab7_level0_row3" class="row_heading level0 row3" >holoviews</th>
+      <td id="T_83ab7_row3_col0" class="data row3 col0" >0.091636</td>
+      <td id="T_83ab7_row3_col1" class="data row3 col1" >0.050123</td>
+      <td id="T_83ab7_row3_col2" class="data row3 col2" >0.001845</td>
+      <td id="T_83ab7_row3_col3" class="data row3 col3" >0.000000</td>
+      <td id="T_83ab7_row3_col4" class="data row3 col4" >0.003075</td>
+      <td id="T_83ab7_row3_col5" class="data row3 col5" >0.030750</td>
+      <td id="T_83ab7_row3_col6" class="data row3 col6" >0.010148</td>
+      <td id="T_83ab7_row3_col7" class="data row3 col7" >0.371771</td>
+      <td id="T_83ab7_row3_col8" class="data row3 col8" >0.066113</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row4" class="row_heading level0 row4" >geopandas</th>
-      <td id="T_07910_row4_col0" class="data row4 col0" >0.002724</td>
-      <td id="T_07910_row4_col1" class="data row4 col1" >0.002220</td>
-      <td id="T_07910_row4_col2" class="data row4 col2" >0.002724</td>
-      <td id="T_07910_row4_col3" class="data row4 col3" >0.001009</td>
-      <td id="T_07910_row4_col4" class="data row4 col4" >0.000000</td>
-      <td id="T_07910_row4_col5" class="data row4 col5" >0.118644</td>
-      <td id="T_07910_row4_col6" class="data row4 col6" >0.009988</td>
-      <td id="T_07910_row4_col7" class="data row4 col7" >0.011703</td>
-      <td id="T_07910_row4_col8" class="data row4 col8" >0.250504</td>
+      <th id="T_83ab7_level0_row4" class="row_heading level0 row4" >geopandas</th>
+      <td id="T_83ab7_row4_col0" class="data row4 col0" >0.002724</td>
+      <td id="T_83ab7_row4_col1" class="data row4 col1" >0.002220</td>
+      <td id="T_83ab7_row4_col2" class="data row4 col2" >0.002724</td>
+      <td id="T_83ab7_row4_col3" class="data row4 col3" >0.001009</td>
+      <td id="T_83ab7_row4_col4" class="data row4 col4" >0.000000</td>
+      <td id="T_83ab7_row4_col5" class="data row4 col5" >0.118644</td>
+      <td id="T_83ab7_row4_col6" class="data row4 col6" >0.009988</td>
+      <td id="T_83ab7_row4_col7" class="data row4 col7" >0.011703</td>
+      <td id="T_83ab7_row4_col8" class="data row4 col8" >0.250504</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row5" class="row_heading level0 row5" >matplotlib</th>
-      <td id="T_07910_row5_col0" class="data row5 col0" >0.000036</td>
-      <td id="T_07910_row5_col1" class="data row5 col1" >0.000041</td>
-      <td id="T_07910_row5_col2" class="data row5 col2" >0.057304</td>
-      <td id="T_07910_row5_col3" class="data row5 col3" >0.000275</td>
-      <td id="T_07910_row5_col4" class="data row5 col4" >0.003237</td>
-      <td id="T_07910_row5_col5" class="data row5 col5" >0.000000</td>
-      <td id="T_07910_row5_col6" class="data row5 col6" >0.087198</td>
-      <td id="T_07910_row5_col7" class="data row5 col7" >0.001594</td>
-      <td id="T_07910_row5_col8" class="data row5 col8" >0.135548</td>
+      <th id="T_83ab7_level0_row5" class="row_heading level0 row5" >matplotlib</th>
+      <td id="T_83ab7_row5_col0" class="data row5 col0" >0.000036</td>
+      <td id="T_83ab7_row5_col1" class="data row5 col1" >0.000041</td>
+      <td id="T_83ab7_row5_col2" class="data row5 col2" >0.057304</td>
+      <td id="T_83ab7_row5_col3" class="data row5 col3" >0.000275</td>
+      <td id="T_83ab7_row5_col4" class="data row5 col4" >0.003237</td>
+      <td id="T_83ab7_row5_col5" class="data row5 col5" >0.000000</td>
+      <td id="T_83ab7_row5_col6" class="data row5 col6" >0.087198</td>
+      <td id="T_83ab7_row5_col7" class="data row5 col7" >0.001594</td>
+      <td id="T_83ab7_row5_col8" class="data row5 col8" >0.135548</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row6" class="row_heading level0 row6" >numpy</th>
-      <td id="T_07910_row6_col0" class="data row6 col0" >0.000000</td>
-      <td id="T_07910_row6_col1" class="data row6 col1" >0.000005</td>
-      <td id="T_07910_row6_col2" class="data row6 col2" >0.001254</td>
-      <td id="T_07910_row6_col3" class="data row6 col3" >0.000059</td>
-      <td id="T_07910_row6_col4" class="data row6 col4" >0.000176</td>
-      <td id="T_07910_row6_col5" class="data row6 col5" >0.056294</td>
-      <td id="T_07910_row6_col6" class="data row6 col6" >0.000000</td>
-      <td id="T_07910_row6_col7" class="data row6 col7" >0.000144</td>
-      <td id="T_07910_row6_col8" class="data row6 col8" >0.167267</td>
+      <th id="T_83ab7_level0_row6" class="row_heading level0 row6" >numpy</th>
+      <td id="T_83ab7_row6_col0" class="data row6 col0" >0.000000</td>
+      <td id="T_83ab7_row6_col1" class="data row6 col1" >0.000005</td>
+      <td id="T_83ab7_row6_col2" class="data row6 col2" >0.001254</td>
+      <td id="T_83ab7_row6_col3" class="data row6 col3" >0.000059</td>
+      <td id="T_83ab7_row6_col4" class="data row6 col4" >0.000176</td>
+      <td id="T_83ab7_row6_col5" class="data row6 col5" >0.056294</td>
+      <td id="T_83ab7_row6_col6" class="data row6 col6" >0.000000</td>
+      <td id="T_83ab7_row6_col7" class="data row6 col7" >0.000144</td>
+      <td id="T_83ab7_row6_col8" class="data row6 col8" >0.167267</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row7" class="row_heading level0 row7" >bokeh</th>
-      <td id="T_07910_row7_col0" class="data row7 col0" >0.002318</td>
-      <td id="T_07910_row7_col1" class="data row7 col1" >0.002014</td>
-      <td id="T_07910_row7_col2" class="data row7 col2" >0.003382</td>
-      <td id="T_07910_row7_col3" class="data row7 col3" >0.045942</td>
-      <td id="T_07910_row7_col4" class="data row7 col4" >0.004408</td>
-      <td id="T_07910_row7_col5" class="data row7 col5" >0.022002</td>
-      <td id="T_07910_row7_col6" class="data row7 col6" >0.003078</td>
-      <td id="T_07910_row7_col7" class="data row7 col7" >0.000000</td>
-      <td id="T_07910_row7_col8" class="data row7 col8" >0.087855</td>
+      <th id="T_83ab7_level0_row7" class="row_heading level0 row7" >bokeh</th>
+      <td id="T_83ab7_row7_col0" class="data row7 col0" >0.002318</td>
+      <td id="T_83ab7_row7_col1" class="data row7 col1" >0.002014</td>
+      <td id="T_83ab7_row7_col2" class="data row7 col2" >0.003382</td>
+      <td id="T_83ab7_row7_col3" class="data row7 col3" >0.045942</td>
+      <td id="T_83ab7_row7_col4" class="data row7 col4" >0.004408</td>
+      <td id="T_83ab7_row7_col5" class="data row7 col5" >0.022002</td>
+      <td id="T_83ab7_row7_col6" class="data row7 col6" >0.003078</td>
+      <td id="T_83ab7_row7_col7" class="data row7 col7" >0.000000</td>
+      <td id="T_83ab7_row7_col8" class="data row7 col8" >0.087855</td>
     </tr>
     <tr>
-      <th id="T_07910_level0_row8" class="row_heading level0 row8" >pandas</th>
-      <td id="T_07910_row8_col0" class="data row8 col0" >0.000044</td>
-      <td id="T_07910_row8_col1" class="data row8 col1" >0.000025</td>
-      <td id="T_07910_row8_col2" class="data row8 col2" >0.007961</td>
-      <td id="T_07910_row8_col3" class="data row8 col3" >0.000167</td>
-      <td id="T_07910_row8_col4" class="data row8 col4" >0.001926</td>
-      <td id="T_07910_row8_col5" class="data row8 col5" >0.038191</td>
-      <td id="T_07910_row8_col6" class="data row8 col6" >0.073000</td>
-      <td id="T_07910_row8_col7" class="data row8 col7" >0.001793</td>
-      <td id="T_07910_row8_col8" class="data row8 col8" >0.000000</td>
+      <th id="T_83ab7_level0_row8" class="row_heading level0 row8" >pandas</th>
+      <td id="T_83ab7_row8_col0" class="data row8 col0" >0.000044</td>
+      <td id="T_83ab7_row8_col1" class="data row8 col1" >0.000025</td>
+      <td id="T_83ab7_row8_col2" class="data row8 col2" >0.007961</td>
+      <td id="T_83ab7_row8_col3" class="data row8 col3" >0.000167</td>
+      <td id="T_83ab7_row8_col4" class="data row8 col4" >0.001926</td>
+      <td id="T_83ab7_row8_col5" class="data row8 col5" >0.038191</td>
+      <td id="T_83ab7_row8_col6" class="data row8 col6" >0.073000</td>
+      <td id="T_83ab7_row8_col7" class="data row8 col7" >0.001793</td>
+      <td id="T_83ab7_row8_col8" class="data row8 col8" >0.000000</td>
     </tr>
   </tbody>
 </table>
@@ -88781,7 +89302,7 @@ L 404.120312 173.52
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x16ce02ec0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x16857d3c0&gt;</pre>
 </div>
 
 </div>
