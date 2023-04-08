@@ -50261,7 +50261,7 @@ L 541.85 7.2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="3.-Add-the-best-fit-lines.">3. Add the best fit lines.<a class="anchor-link" href="#3.-Add-the-best-fit-lines.">&#182;</a></h4><p>We will use NumPy to obtain the best fit lines, which will be a first degree and a second degree polynomial. The <code>Polynomial.fit()</code> method fits a polynomial of the specified degree to our data and returns a <a href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.html">Polynomial instance</a> that we can evaluate at different x values to obtain the y values for the best fit line:</p>
+<h4 id="3.-Add-the-best-fit-lines.">3. Add the best fit lines.<a class="anchor-link" href="#3.-Add-the-best-fit-lines.">&#182;</a></h4><p>We will use NumPy to obtain the best fit lines, which will be a first degree and a second degree polynomial. The <code>Polynomial.fit()</code> method fits a polynomial of the specified degree to our data and returns a <a href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.html">Polynomial instance</a>, which we will use to obtain (x, y) points for plotting the best fit line:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">degree</span> <span class="o">=</span> <span class="mi">1</span>
