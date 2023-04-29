@@ -8,7 +8,7 @@ While there are many plotting libraries to choose from, the prolific Matplotlib 
 
 ## Workshop Outline
 
-This is a workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/) and subsequently at [ODSC East 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/),  [PyCon Italia 2022](https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03), [ODSC Europe 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [EuroPython 2022](https://ep2022.europython.eu/session/beyond-the-basics-data-visualization-in-python), [ODSC West 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), and the Toronto Machine Learning Summit (TMLS) 2022. It's divided into the following sections:
+This is a workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/) and subsequently at [ODSC East 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [PyCon Italia 2022](https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03), [ODSC Europe 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [EuroPython 2022](https://ep2022.europython.eu/session/beyond-the-basics-data-visualization-in-python), [ODSC West 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), the Toronto Machine Learning Summit (TMLS) 2022, [PyCon US 2023](https://us.pycon.org/2023/schedule/presentation/17/), and [ODSC East 2023](https://odsc.com/speakers/introduction-to-data-visualization-in-python/). It's divided into the following sections:
 
 ### Section 1: Getting Started With Matplotlib
 We will begin by familiarizing ourselves with Matplotlib. Moving beyond the default options, we will explore how to customize various aspects of our visualizations. By the end of this section, you will be able to generate plots using the Matplotlib API directly, as well as customize the plots that libraries like pandas and Seaborn create for you.
@@ -23,7 +23,7 @@ When exploring our data, interactive visualizations can provide the most value. 
 ---
 
 ## Prerequisites
-You should have basic knowledge of Python and be comfortable working in Jupyter Notebooks. Check out [this notebook](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master/ch_01/python_101.ipynb) for a crash course in Python or work through the [official Python tutorial](https://docs.python.org/3/tutorial/) for a more formal introduction. The environment we will use for this workshop comes with JupyterLab, which is pretty intuitive, but be sure to familiarize yourself [using notebooks in JupyterLab](https://jupyterlab.readthedocs.io/en/latest/user/notebook.html) and [additional functionality in JupyterLab](https://dzone.com/articles/getting-started-with-jupyterlab). In addition, a basic understanding of `pandas` will be beneficial, but is not required; reviewing the first section of my [pandas workshop](https://github.com/stefmolin/pandas-workshop) will be sufficient.
+You should have basic knowledge of Python and be comfortable working in Jupyter Notebooks. Check out [this notebook](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master/ch_01/python_101.ipynb) for a crash course in Python or work through the [official Python tutorial](https://docs.python.org/3/tutorial/) for a more formal introduction. The environment we will use for this workshop comes with JupyterLab, which is pretty intuitive, but be sure to familiarize yourself [using notebooks in JupyterLab](https://jupyterlab.readthedocs.io/en/latest/user/notebook.html) and [additional functionality in JupyterLab](https://dzone.com/articles/getting-started-with-jupyterlab). In addition, a basic understanding of pandas will be beneficial, but is not required; reviewing the first section of my [pandas workshop](https://github.com/stefmolin/pandas-workshop) will be sufficient.
 
 ---
 
@@ -46,6 +46,8 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
     ~/python-data-viz-workshop$ conda activate data_viz_workshop
     (data_viz_workshop) ~/python-data-viz-workshop$
     ```
+
+    *Note: Installing `mamba` is optional. If you decide to use `conda`, don't run the `conda install mamba` command and change `mamba env create` to `conda env create`.*
 
 4. Launch JupyterLab:
 
