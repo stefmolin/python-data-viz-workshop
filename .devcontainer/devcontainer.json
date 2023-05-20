@@ -6,7 +6,7 @@
 		"context": "..",
 		"dockerfile": "Dockerfile",
 		"args": {
-			"NODE_VERSION": "lts/*"
+			"NODE_VERSION": "none"
 		}
 	},
 
