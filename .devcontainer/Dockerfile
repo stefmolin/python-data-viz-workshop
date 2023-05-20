@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/miniconda:${VARIANT}
 ENV MAMBA_EXE="/opt/mambaforge/bin/mamba"
 RUN cd /tmp \
     && curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh" \
-    && bash Mambaforge-$(uname)-$(uname -m).sh -b -p /opt/mambaforge
+    && sudo bash Mambaforge-$(uname)-$(uname -m).sh -b -p /opt/mambaforge
 
 # Create the conda environment
 COPY environment.yml /tmp/conda-tmp/
