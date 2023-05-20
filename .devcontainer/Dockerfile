@@ -7,14 +7,14 @@ ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # Install mamba for faster install
-ARG MAMBA_INSTALLER="Mambaforge-$(uname)-$(uname -m).sh"
-RUN curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/${MAMBA_INSTALLER}" \
-    && bash "${MAMBA_INSTALLER}"
+ENV MAMBA_EXE="/opt/mambaforge/bin/mamba"
+RUN cd /tmp \
+    && curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh" \
+    && sudo bash Mambaforge-$(uname)-$(uname -m).sh -b -p /opt/mambaforge
 
 # Create the conda environment
 COPY environment.yml* /tmp/conda-tmp/
-RUN umask 0002 && mamba env create -f /tmp/conda-tmp/environment.yml \
-    && rm -rf /tmp/conda-tmp
+RUN umask 0002 && /opt/mambaforge/bin/mamba env create --file /tmp/conda-tmp/environment.yml
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
