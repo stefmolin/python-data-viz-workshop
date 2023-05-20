@@ -12,6 +12,14 @@
 
 	// Configure tool-specific properties.
 	"customizations": {
+
+		// Configure how codespaces will open
+		"codespaces": {
+			"openFiles": [
+				"notebooks/0-check_your_env.ipynb"
+			]
+		},
+
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
@@ -39,6 +47,9 @@
 	"features": {
 		"ghcr.io/devcontainers/features/python:1": {
 			"installJupyterlab": true
+		},
+		"ghcr.io/mamba-org/devcontainer-features/micromamba:1": {
+			"envFile": "/tmp/conda-tmp/environment.yml"
 		}
 	}
 }
