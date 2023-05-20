@@ -4,10 +4,7 @@
 	"name": "Python Data Viz Workshop",
 	"build": {
 		"context": "..",
-		"dockerfile": "Dockerfile",
-		"args": {
-			"NODE_VERSION": "none"
-		}
+		"dockerfile": "Dockerfile"
 	},
 
 	// Configure tool-specific properties.
@@ -47,9 +44,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/python:1": {
 			"installJupyterlab": true
-		},
-		"ghcr.io/mamba-org/devcontainer-features/micromamba:1": {
-			"envFile": "/tmp/conda-tmp/environment.yml"
 		}
 	}
 }
