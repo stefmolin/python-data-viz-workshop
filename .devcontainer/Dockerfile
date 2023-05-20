@@ -1,6 +1,6 @@
-# Change variant to 3-bullseye for local arm64/Apple Silicon https://github.com/devcontainers/templates/blob/main/src/python/README.md
+# https://github.com/microsoft/vscode-dev-containers/blob/main/containers/python-3-miniconda/.devcontainer/base.Dockerfile
 ARG VARIANT=3
-FROM mcr.microsoft.com/devcontainers/python:${VARIANT}
+FROM mcr.microsoft.com/vscode/devcontainers/miniconda:${VARIANT}
 
 # Install mamba for faster install
 ENV MAMBA_EXE="/opt/mambaforge/bin/mamba"
@@ -10,4 +10,4 @@ RUN cd /tmp \
 
 # Create the conda environment
 COPY environment.yml /tmp/conda-tmp/
-RUN umask 0002 && $MAMBA_EXE env create --file /tmp/conda-tmp/environment.yml
+RUN umask 0002 && $MAMBA_EXE env create --file /tmp/conda-tmp/environment.yml && $MAMBA_EXE init
