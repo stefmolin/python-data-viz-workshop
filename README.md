@@ -39,11 +39,11 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-2. Navigate to your fork and click the **Code** button:
+2. Navigate to your fork, and click the **Code** button:
 
     ![location of code button in GitHub](./media/code_button.png)
 
-3. Clone your forked repository using the option of your choosing from the **Local** tab:
+3. Clone your forked repository using the desired method from the **Local** tab:
 
     <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
@@ -78,7 +78,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop)
 
-The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
+The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get more than enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
 
 Note that if you want to save your changes, you will need to fork the repository before creating the codespace. You will then be able to commit your changes directly from the codespace. Be sure to create your codespace in advance of the session and resume when we start.
 
@@ -86,11 +86,11 @@ Note that if you want to save your changes, you will need to fork the repository
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-2. Navigate to your fork and click the **Code** button:
+2. Navigate to your fork, and click the **Code** button:
 
     ![location of code button in GitHub](./media/code_button.png)
 
-3. Launch the codespace from your fork by clicking on the **+** or the **Create codespace on main** button in the **Codespaces** tab:
+3. Launch the codespace from your fork by clicking on the **+** or **Create codespace on main** button in the **Codespaces** tab:
 
     <img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
 
