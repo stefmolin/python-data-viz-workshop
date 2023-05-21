@@ -31,31 +31,21 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
 You can work through the notebooks locally or in your browser. Pick the installation option that makes sense for you.
 
-### Cloud Options
-
-#### GitHub Codespaces
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop/tree/configure-codespace)
-
-The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
-
-#### Binder
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab/tree/notebooks)
-
-Depending on server availability, you can use [this](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab) Binder environment, which does not require the creation of a GitHub account. There is no guarantee that you will be able to access this during the workshop.
-
 ### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
-1. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html#fresh-install).
-2. Fork this repository:
+0. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html#fresh-install).
+1. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-3. Clone your forked repository:
+2. Navigate to your fork and click the **Code** button:
 
-    ![location of clone button in GitHub](./media/clone_button.png)
+    ![location of code button in GitHub](./media/code_button.png)
+
+3. Clone your forked repository using the option of your choosing from the **Local** tab:
+
+    <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
 4. Create and activate a conda virtual environment (on Windows, these commands should be run in **Anaconda Prompt**):
 
@@ -81,6 +71,38 @@ Depending on server availability, you can use [this](https://mybinder.org/v2/gh/
 7. Run the notebook to confirm everything is set up properly:
 
     ![check env](./media/env_check.png)
+
+### Cloud Options
+
+#### GitHub Codespaces
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop)
+
+The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
+
+Note that if you want to save your changes, you will need to fork the repository before creating the codespace. You will then be able to commit your changes directly from the codespace. Be sure to create your codespace in advance of the session and resume when we start.
+
+1. Fork this repository:
+
+    ![location of fork button in GitHub](./media/fork_button.png)
+
+2. Navigate to your fork and click the **Code** button:
+
+    ![location of code button in GitHub](./media/code_button.png)
+
+3. Launch the codespace from your fork by clicking on the **+** or the **Create codespace on main** button in the **Codespaces** tab:
+
+    <img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
+
+4. Stop the codespace until the session starts (click the name to resume).
+
+    <img width="400px" src="./media/edit-codespace.png" alt="ways to modify an existing codespace">
+
+#### Binder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab/tree/notebooks)
+
+Depending on server availability, you can use [this](https://mybinder.org/v2/gh/stefmolin/python-data-viz-workshop/main?urlpath=lab) Binder environment, which does not require the creation of a GitHub account. **There is no guarantee that you will be able to access this during the workshop.**
 
 ---
 
