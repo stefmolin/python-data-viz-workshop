@@ -34,7 +34,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
 ### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
-0. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html#fresh-install).
+0. Install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html#fresh-install), if not already installed.
 1. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
