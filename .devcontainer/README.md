@@ -18,4 +18,4 @@ Select the **data_viz_workshop** option:
 
 <img width="600px" src="../media/devcontainer-conda-env-select.png" alt="selecting a virtual environment">
 
-Use `data_viz_workshop` for all subsequent notebooks. Note that you can close bottom panel (**TERMINAL**) for more space.
+Use `data_viz_workshop` for all subsequent notebooks. Note that you can close the bottom panel (**TERMINAL**) for more space.
