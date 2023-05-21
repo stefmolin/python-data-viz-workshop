@@ -1,5 +1,7 @@
 # Workshop Notebooks
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop)
+
 This directory contains the notebooks for following along with the session. You should run the cells as we progress through the session. Each section contains exercises, which you should complete in the `workbook.ipynb` notebook.
 
 | Section | Notebook |
