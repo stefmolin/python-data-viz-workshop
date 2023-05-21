@@ -20,7 +20,7 @@
 		// Configure how codespaces will open
 		"codespaces": {
 			"openFiles": [
-				"notebooks/0-check_your_env.ipynb"
+				".devcontainer/README.md"
 			]
 		},
 
@@ -44,7 +44,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "$MAMBA_EXE activate data_viz_workshop",
+	"postCreateCommand": "conda activate data_viz_workshop",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
