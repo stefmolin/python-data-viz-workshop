@@ -1,6 +1,6 @@
 # Welcome to the devcontainer for Beyond the Basics: Data Visualization in Python!
 
-**IMPORTANT**: Open this file in the preview to render the images (right-click the file in the left sidebar, and click **Open Preview**).
+**IMPORTANT**: Open this file using the preview option to render the images (right-click the file in the left sidebar, and click **Open Preview**).
 
 ---
 
