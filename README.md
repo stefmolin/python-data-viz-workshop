@@ -35,7 +35,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
 #### GitHub Codespaces
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop/tree/configure-codespace)
 
 The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
 
