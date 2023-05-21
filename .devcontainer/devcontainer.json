@@ -47,5 +47,12 @@
 	// "postCreateCommand": "",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+
+	"features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "installJupyterlab": "true",
+            "configureJupyterlabAllowOrigin": "*"
+        }
+	}
 }
