@@ -19,3 +19,7 @@ def mpl_svg_config(hashsalt):
             'Date': f'(c) 2021-{dt.date.today().year} Stefanie Molin'
         }
     }
+
+def save_plot(fig, filename):
+    """Save the figure with a white background."""
+    fig.savefig(filename, facecolor='white', bbox_inches='tight')
