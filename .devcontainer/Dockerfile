@@ -10,4 +10,9 @@ RUN cd /tmp \
 
 # Create the conda environment
 COPY environment.yml /tmp/conda-tmp/
-RUN umask 0002 && $MAMBA_EXE env create --file /tmp/conda-tmp/environment.yml && $MAMBA_EXE init
+RUN $MAMBA_EXE env create --file /tmp/conda-tmp/environment.yml --prefix /home/vscode/.conda/envs/data_viz_workshop \
+    && $MAMBA_EXE init
+
+# Update PATH for Jupyter editing option
+ENV PATH="/home/vscode/.conda/envs/data_viz_workshop/bin:${PATH}"
+ENV PROJ_LIB="/home/vscode/.conda/envs/data_viz_workshop/share/proj"
