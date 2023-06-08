@@ -78,7 +78,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/python-data-viz-workshop)
 
-The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine with Jupyter Notebooks running in [Visual Studio Code](https://code.visualstudio.com/) in your browser. You will need a GitHub account and available quota (all users get more than enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
+The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine accessible via your browser. You will need a GitHub account and available quota (all users get more than enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
 
 Note that if you want to save your changes, you will need to fork the repository before creating the codespace. You will then be able to commit your changes directly from the codespace. Be sure to create your codespace in advance of the session and resume when we start.
 
@@ -94,9 +94,13 @@ Note that if you want to save your changes, you will need to fork the repository
 
     <img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
 
-4. Stop the codespace until the session starts (click the name to resume).
+4. Stop the codespace until the session starts by selecting **Stop codespace** from the **...** menu.
 
-    <img width="400px" src="./media/edit-codespace.png" alt="ways to modify an existing codespace">
+    <img width="400px" src="./media/stop-codespace.png" alt="stop codespace">
+
+5. To resume the codespace, click **Open in ...** and then select your preferred method. If you aren't sure, select JupyterLab.
+
+    <img width="400px" src="./media/resume-codespace.png" alt="resuming a codespace">
 
 #### Binder
 
