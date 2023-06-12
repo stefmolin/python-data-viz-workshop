@@ -34,7 +34,6 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-python.python",
-				"ms-python.vscode-pylance",
 				"ms-toolsai.jupyter"
 			]
 		}
@@ -47,12 +46,5 @@
 	// "postCreateCommand": "",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
-
-	"features": {
-        "ghcr.io/devcontainers/features/python:1": {
-            "installJupyterlab": "true",
-			"configureJupyterlabAllowOrigin": "*"
-        }
-	}
+	"remoteUser": "vscode"
 }

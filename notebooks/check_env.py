@@ -59,7 +59,7 @@ def run_env_check(raise_exc=False):
         Whether to raise an `Exception` if any of the packages doesn't
         match the requirements (used for GitHub Action).
     """
-    
+
     failures = []
     _print_failure = partial(_print_version_failure, failures=failures)
 
@@ -153,8 +153,9 @@ def run_env_check(raise_exc=False):
             _print_version_ok(pkg)
         except ImportError:
             if pkg == 'ffmpeg':
+                env_spec = '-n data_viz_workshop' if os.environ.get('CODESPACES') else ''
                 try:
-                    pkg_info = json.loads(os.popen('conda list -f ffmpeg --json').read())[0]
+                    pkg_info = json.loads(os.popen(' '.join(['conda list -f ffmpeg --json', env_spec])).read())[0]
                     if pkg_info:
                         if req_version:
                             if isinstance(req_version, list):

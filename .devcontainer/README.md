@@ -14,7 +14,7 @@ Select the **Python Environments...** option:
 
 <img width="600px" src="../media/devcontainer-python-environments-select.png" alt="initial options in select kernel menu">
 
-Select the **data_viz_workshop** option:
+Select the **data_viz_workshop** option (the Python version can vary):
 
 <img width="600px" src="../media/devcontainer-conda-env-select.png" alt="selecting a virtual environment">
 
