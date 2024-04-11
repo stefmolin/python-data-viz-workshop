@@ -19,13 +19,61 @@
 <head>
 
 {%- block html_head -%}
+<!-- Google tag (gtag.js) -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+    dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-25389D1SR4");
+</script>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>{{title}} {{nb_title}} slides &ndash; Stefanie Molin</title>
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StefanieMolin" />
+<meta name="twitter:creator" content="@StefanieMolin" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Stefanie Molin" />
+<meta name="author" content="Stefanie Molin" />
+<meta name="referrer" content="origin" />
+<meta
+  name="keywords"
+  content="technology, workshop, data visualization, Python, data science, slides" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<meta
+  property="og:url"
+  content="https://stefaniemolin.com/{{repo_name}}/" />
+<meta name="robots" content="index,follow" />
+<meta
+  name="description"
+  content="The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python." />
+<meta
+  property="og:title"
+  content="{{title}} {{nb_title}} slides | Stefanie Molin" />
+<meta
+  property="og:description"
+  content="The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python." />
+<meta
+  property="og:image"
+  content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/stefaniemolin.com/Beyond%20the%20Basics%3A%20Data%20Visualization%20in%20Python%20workshop%20slides/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517783999520-f068d7431a60%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D2340%26q%3D80/og.png" />
+<meta
+  property="og:image:alt"
+  content="{{title}} {{nb_title}} slides" />
+<meta property="og:image:width" content="2340" />
+<meta property="og:image:height" content="1560" />
+
+<title>{{title}} {{nb_title}} slides | Stefanie Molin</title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
 
 {%- block html_head_js -%}
