@@ -3,6 +3,7 @@
 {% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
 {% set repo_name = 'python-data-viz-workshop' %}
 {% set svg_plot_max_height = 375 %}
+{% set description = "The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python." %}
 
 {% from 'mathjax.html.j2' import mathjax %}
 {% from 'jupyter_widgets.html.j2' import jupyter_widgets %}
@@ -50,20 +51,19 @@
 <meta
   name="keywords"
   content="technology, workshop, data visualization, Python, data science, slides" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
 <meta
   property="og:url"
   content="https://stefaniemolin.com/{{repo_name}}/" />
 <meta name="robots" content="index,follow" />
 <meta
   name="description"
-  content="The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python." />
+  content="{{description}}" />
 <meta
   property="og:title"
   content="{{title}} {{nb_title}} slides | Stefanie Molin" />
 <meta
   property="og:description"
-  content="The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python." />
+  content="{{description}}" />
 <meta
   property="og:image"
   content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/stefaniemolin.com/Beyond%20the%20Basics%3A%20Data%20Visualization%20in%20Python%20workshop%20slides/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517783999520-f068d7431a60%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D2340%26q%3D80/og.png" />
@@ -74,7 +74,32 @@
 <meta property="og:image:height" content="1560" />
 
 <title>{{title}} {{nb_title}} slides | Stefanie Molin</title>
+<link rel="manifest" href="/favicon/site.webmanifest" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
+<link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/favicon/apple-touch-icon.png" />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon/favicon-32x32.png" />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon/favicon-16x16.png" />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="/favicon/android-chrome-192x192.png" />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="/favicon/android-chrome-512x512.png" />
 
 {%- block html_head_js -%}
 {%- block html_head_js_jquery -%}
