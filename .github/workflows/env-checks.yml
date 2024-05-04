@@ -47,7 +47,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # remove the Python version from the file for testing
       - name: strip hardcoded Python version from environment for testing
