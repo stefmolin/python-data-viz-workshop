@@ -2,7 +2,7 @@ name: data_viz_workshop
 channels:
     - conda-forge
 dependencies:
-    - python=3.12
+    - python>=3.9.0,<=3.13.0
     - bokeh=3.4.1
     - ffmpeg
     - geopandas=0.14.4
