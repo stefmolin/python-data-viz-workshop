@@ -59,12 +59,13 @@ jobs:
           fi;
 
       # create the conda env
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
           miniforge-variant: Mambaforge
-          use-mamba: true
+          mamba-version: "*"
+          channels: conda-forge
           channel-priority: true
           activate-environment: data_viz_workshop
           environment-file: environment.yml
