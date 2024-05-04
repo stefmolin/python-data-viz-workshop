@@ -5,8 +5,7 @@ import datetime as dt
 
 def despine(ax):
     """Hide the top and right spines on a Matplotlib Axes object."""
-    for spine in ['top', 'right']:
-        ax.spines[spine].set_visible(False)
+    ax.spines[['top', 'right']].set_visible(False)
     return ax
 
 def mpl_svg_config(hashsalt):
