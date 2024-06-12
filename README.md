@@ -81,7 +81,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
     ![check env](./media/env_check.png)
 
 ### Docker installation
-If you have Docker installed in your system (instructions [here](https://docs.docker.com/get-docker/)) you can set up the environment using `docker compose`. Run through the [Local Installation](#local-installation) guide, but instead of steps 4 and 5, do
+If you have Docker installed in your system (instructions [here](https://docs.docker.com/get-docker/)), you can set up the environment using `docker compose`. Run through the [local installation guide](#local-installation) (skip installing anaconda in step 0, as Docker takes care of installing this dependency), and instead of steps 4 and 5, do
 
 4. Build the Docker image needed to run the Jupyter environment:
 
