@@ -80,6 +80,25 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
     ![check env](./media/env_check.png)
 
+### Docker installation
+If you have Docker installed in your system (instructions [here](https://docs.docker.com/get-docker/)) you can set up the environment using `docker compose`. Run through the [Local Installation](#local-installation) guide, but instead of steps 4 and 5, do
+
+4. Build the Docker image needed to run the Jupyter environment:
+
+    ```shell
+    docker compose build
+    ```
+
+5. Launch JupyterLab from within Docker:
+
+    ```shell
+    docker compose up
+    ```
+
+You should be able to access the environment at [http://localhost:8888](http://localhost:8888). Follow through steps 6-7 normally.
+
+*Note: to terminate the Docker service once you're done, use `ctr+c` to terminate the command.*
+
 ### Cloud Options
 
 #### GitHub Codespaces

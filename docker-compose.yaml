@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  workshop:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workshop
