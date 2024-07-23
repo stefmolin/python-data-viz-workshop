@@ -80,24 +80,47 @@ You can work through the notebooks locally or in your browser. Pick the installa
 
     ![check env](./media/env_check.png)
 
-### Docker installation
-If you have Docker installed in your system (instructions [here](https://docs.docker.com/get-docker/)), you can set up the environment using `docker compose`. Run through the [local installation guide](#local-installation) (skip installing anaconda in step 0, as Docker takes care of installing this dependency), and instead of steps 4 and 5, do
+### Docker Installation
+0. Install the following, if not already installed:
+    - [Docker](https://docs.docker.com/get-docker/)
+    - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+1. Fork this repository:
+
+    ![location of fork button in GitHub](./media/fork_button.png)
+
+2. Navigate to your fork, and click the **Code** button:
+
+    ![location of code button in GitHub](./media/code_button.png)
+
+3. Clone your forked repository using the desired method from the **Local** tab:
+
+    <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
 4. Build the Docker image needed to run the Jupyter environment:
 
     ```shell
-    docker compose build
+    $ cd python-data-viz-workshop
+    ~/python-data-viz-workshop$ docker compose build
     ```
 
-5. Launch JupyterLab from within Docker:
+5. Launch JupyterLab from within a Docker container:
 
     ```shell
-    docker compose up
+    ~/python-data-viz-workshop$ docker compose up
     ```
 
-You should be able to access the environment at [http://localhost:8888](http://localhost:8888). Follow through steps 6-7 normally.
+    You should be able to access the environment at <http://localhost:8888>
 
-*Note: to terminate the Docker service once you're done, use `ctr+c` to terminate the command.*
+6. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
+
+    ![open 0-check_your_env.ipynb](./media/open_env_check_notebook.png)
+
+7. Run the notebook to confirm everything is set up properly:
+
+    ![check env](./media/env_check.png)
+
+*Note: Once you're done, use `ctrl+c` to stop the Docker container.*
 
 ### Cloud Options
 
