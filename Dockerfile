@@ -11,4 +11,4 @@ COPY . .
 
 # Run within the container and allow access without token from localhost:8888
 CMD [ "conda", "run", "-n", "data_viz_workshop", "jupyter", "lab", \
-    "--allow-root", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''" ]
+      "--allow-root", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''" ]
