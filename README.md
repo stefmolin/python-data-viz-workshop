@@ -34,7 +34,11 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
 ## Setup Instructions
 
-You can work through the notebooks locally or in your browser. Pick the installation option that makes sense for you.
+Pick the installation option that makes sense for you:
+
+- [Local Installation](#local-installation)
+- [Docker Container](#docker-installation)
+- [Cloud Service](#cloud-options)
 
 ### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
