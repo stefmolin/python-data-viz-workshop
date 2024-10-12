@@ -44,7 +44,7 @@ Pick the installation option that makes sense for you:
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
 0. Install the following, if not already installed:
-    - [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mambaforge](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)
+    - [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)
     - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 1. Fork this repository:
