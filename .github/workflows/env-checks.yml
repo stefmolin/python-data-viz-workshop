@@ -63,7 +63,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
-          mamba-version: "*"
           channels: conda-forge
           channel-priority: true
           activate-environment: data_viz_workshop
