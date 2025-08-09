@@ -43,48 +43,53 @@ Pick the installation option that makes sense for you:
 ### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
-0. Install the following, if not already installed:
-    - [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)
-    - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), if not already installed on your computer.
 
-1. Fork this repository:
+2. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-2. Navigate to your fork, and click the **Code** button:
+3. Navigate to your fork, and click the **Code** button:
 
     ![location of code button in GitHub](./media/code_button.png)
 
-3. Clone your forked repository using the desired method from the **Local** tab:
+4. Clone your forked repository using the desired method from the **Local** tab:
 
     <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
-4. Create and activate a conda virtual environment (on Windows, these commands should be run in **Anaconda Prompt**):
+5. Install one of the following, if not already installed:
+    - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
+    - [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
 
-    ```shell
-    $ cd python-data-viz-workshop
-    ~/python-data-viz-workshop$ conda env create --file environment.yml
-    ~/python-data-viz-workshop$ conda activate data_viz_workshop
-    (data_viz_workshop) ~/python-data-viz-workshop$
-    ```
+6. Set up your environment and launch JupyterLab:
+    - Using `uv`:
 
-    *Note: If you installed Mambaforge or have already installed `mamba` in your base environment, you can change `conda env create` to `mamba env create`.*
+        ```shell
+        $ cd python-data-viz-workshop
+        $ uv run jupyter lab
+        ```
 
-5. Launch JupyterLab:
+    - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
 
-    ```shell
-    (data_viz_workshop) ~/python-data-viz-workshop$ jupyter lab
-    ```
+        ```shell
+        $ cd python-data-viz-workshop
+        $ conda env create --file environment.yml
+        $ conda activate data_viz_workshop
+        (data_viz_workshop) $ jupyter lab
+        ```
 
-6. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
+        *Note: If you installed Mambaforge or have already installed `mamba` in your base environment, you can change `conda env create` to `mamba env create`.*
+
+7. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
     ![open 0-check_your_env.ipynb](./media/open_env_check_notebook.png)
 
-7. Run the notebook to confirm everything is set up properly:
+8. Run the notebook to confirm everything is set up properly:
 
     ![check env](./media/env_check.png)
 
 ### Docker Installation
+
 0. Install the following, if not already installed:
     - [Docker](https://docs.docker.com/get-docker/)
     - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
@@ -105,13 +110,13 @@ Pick the installation option that makes sense for you:
 
     ```shell
     $ cd python-data-viz-workshop
-    ~/python-data-viz-workshop$ docker compose build
+    $ docker compose build
     ```
 
 5. Launch JupyterLab from within a Docker container:
 
     ```shell
-    ~/python-data-viz-workshop$ docker compose up
+    $ docker compose up
     ```
 
     You should be able to access the environment at <http://localhost:8888>
