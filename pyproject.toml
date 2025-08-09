@@ -7,21 +7,21 @@ license-files = [ "LICENSE" ]
 authors = [
   { name = "Stefanie Molin", email = "python-data-viz-workshop@stefaniemolin.com" },
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.10" # Python 3.10 is EOL in October 2026
 dependencies = [
-    "bokeh==3.4.1",
+    "bokeh==3.7.3",
     "ffmpeg",
-    "geopandas==0.14.4",
+    "geopandas==1.1.1",
     "jupyterlab>=4.1.8",
-    "matplotlib==3.8.4",
-    "numpy==1.26.4",
-    "pandas==2.2.2",
+    "matplotlib==3.10.5",
+    "numpy==2.2.6", # 2.3.0 supports Python>=3.11,<=3.13
+    "pandas==2.3.1",
     "seaborn==0.13.2",
-    "shapely==2.0.4",
-    "geoviews==1.12.0",
-    "holoviews==1.18.3",
-    "hvplot==0.9.2",
-    "panel==1.4.2",
+    "shapely==2.1.1",
+    "geoviews==1.14.0",
+    "holoviews==1.21.0",
+    "hvplot==0.12.0",
+    "panel==1.7.5",
 ]
 
 [dependency-groups]
