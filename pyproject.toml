@@ -1,6 +1,6 @@
 [project]
 name = "python-data-viz-workshop"
-version = "3.0.0"
+version = "4.0.0"
 description = "A workshop on data visualization in Python created by Stefanie Molin"
 readme = "README.md"
 license-files = [ "LICENSE" ]
