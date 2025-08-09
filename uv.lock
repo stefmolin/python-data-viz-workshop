@@ -1079,7 +1079,7 @@ name = "importlib-metadata"
 version = "8.7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp", marker = "python_full_version < '3.10'" },
+    { name = "zipp", marker = "python_full_version < '3.11'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz", hash = "sha256:d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000", size = 56641, upload-time = "2025-04-27T15:29:01.736Z" }
 wheels = [
@@ -1928,6 +1928,12 @@ wheels = [
 ]
 
 [[package]]
+name = "nbmerge"
+version = "0.0.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/73/a9/56a02f2a3405397af9924e1d372b2e546ebcdb312d800f3945b321a328a5/nbmerge-0.0.4.tar.gz", hash = "sha256:f432797ee685ed495a2daa4dbb76e2b52028d2c3a38142b523bb5cb832df0882", size = 7590, upload-time = "2017-05-14T21:14:22.954Z" }
+
+[[package]]
 name = "nest-asyncio"
 version = "1.6.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2435,6 +2441,11 @@ dependencies = [
     { name = "shapely" },
 ]
 
+[package.dev-dependencies]
+slides = [
+    { name = "nbmerge" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "bokeh", specifier = "==3.4.1" },
@@ -2451,6 +2462,9 @@ requires-dist = [
     { name = "seaborn", specifier = "==0.13.2" },
     { name = "shapely", specifier = "==2.0.4" },
 ]
+
+[package.metadata.requires-dev]
+slides = [{ name = "nbmerge", specifier = ">=0.0.4" }]
 
 [[package]]
 name = "python-dateutil"

@@ -23,3 +23,8 @@ dependencies = [
     "hvplot==0.9.2",
     "panel==1.4.2",
 ]
+
+[dependency-groups]
+slides = [
+    "nbmerge>=0.0.4",
+]
