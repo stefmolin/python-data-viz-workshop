@@ -1,11 +1,12 @@
 """Check the setup for the workshop."""
 
-from functools import partial
-from packaging.version import Version
 import importlib
 import json
 import os
 import sys
+from functools import partial
+
+from packaging.version import Version
 
 try:
     import yaml
@@ -74,6 +75,8 @@ def run_env_check(raise_exc=False):
                 pkg, versions = line.split('>=')
                 if ',<=' in versions:
                     version = versions.split(',<=')
+                elif ',<' in versions:
+                    version = versions.split(',<')
                 else:
                     version = [versions, None]
             else:
