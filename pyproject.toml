@@ -7,7 +7,7 @@ license-files = [ "LICENSE" ]
 authors = [
   { name = "Stefanie Molin", email = "python-data-viz-workshop@stefaniemolin.com" },
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "bokeh==3.4.1",
     "ffmpeg",
