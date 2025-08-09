@@ -13,7 +13,7 @@ While there are many plotting libraries to choose from, the prolific Matplotlib 
 
 ## Workshop Outline
 
-This is a workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/) and subsequently at [ODSC East 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [PyCon Italia 2022](https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03), [ODSC Europe 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [EuroPython 2022](https://ep2022.europython.eu/session/beyond-the-basics-data-visualization-in-python), [ODSC West 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), the Toronto Machine Learning Summit (TMLS) 2022, [PyCon US 2023](https://us.pycon.org/2023/schedule/presentation/17/), [ODSC East 2023](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [PyCon Italia 2023](https://pycon.it/en/event/beyond-the-basics-data-visualization-in-python-2), [PyCon Portugal 2023](https://pretalx.evolutio.pt/pycon-pt-2023/talk/STX8K3/), and PyCon Colombia 2024. It's divided into the following sections:
+This is a workshop on data visualization in Python first delivered at [ODSC West 2021](https://odsc.com/speakers/introduction-to-data-visualization-in-python/) and subsequently at [ODSC East 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [PyCon Italia 2022](https://pycon.it/en/talk/beyond-the-basics-data-visualization-in-python?day=2022-06-03), [ODSC Europe 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [EuroPython 2022](https://ep2022.europython.eu/session/beyond-the-basics-data-visualization-in-python), [ODSC West 2022](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), the Toronto Machine Learning Summit (TMLS) 2022, [PyCon US 2023](https://us.pycon.org/2023/schedule/presentation/17/), [ODSC East 2023](https://odsc.com/speakers/introduction-to-data-visualization-in-python/), [PyCon Italia 2023](https://pycon.it/en/event/beyond-the-basics-data-visualization-in-python-2), [PyCon Portugal 2023](https://pretalx.evolutio.pt/pycon-pt-2023/talk/STX8K3/), PyCon Colombia 2024, and EuroSciPy 2025. It's divided into the following sections:
 
 ### Section 1: Getting Started With Matplotlib
 We will begin by familiarizing ourselves with Matplotlib. Moving beyond the default options, we will explore how to customize various aspects of our visualizations. By the end of this section, you will be able to generate plots using the Matplotlib API directly, as well as customize the plots that libraries like pandas and Seaborn create for you.
@@ -58,8 +58,8 @@ Pick the installation option that makes sense for you:
     <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
 5. Install one of the following, if not already installed:
-    - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
     - [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+    - [uv](https://docs.astral.sh/uv/getting-started/installation/). Note that you will also need to [install `ffmpeg`](https://ffmpeg.org/download.html) (for example, `brew install ffmpeg` for MacOS users).
 
 6. Set up your environment and launch JupyterLab:
     - Using `uv`:
