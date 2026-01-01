@@ -47,7 +47,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
 
       # remove the Python version from the file for testing
       - name: strip hardcoded Python version from environment for testing
@@ -59,7 +59,7 @@ jobs:
           fi;
 
       - name: Cache conda
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb  # v5.0.1
         env:
           # Increase this value to reset cache if environment.yml has not changed
           CACHE_NUMBER: 0
