@@ -5,6 +5,15 @@
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
+## Help support this project 📈
+
+[![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/stefmolin&style=flat)](https://github.com/sponsors/stefmolin)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-yellow?style=flat&logo=buymeacoffee&logoColor=white&labelColor=yellow&color=gray)
+](https://www.buymeacoffee.com/stefanie.molin)
+[![Ko-Fi](https://shields.io/badge/kofi-Support-ff5f5f?logo=ko-fi&style=flat)](https://ko-fi.com/stefaniemolin)
+
+Since November 2021, I have dedicated **170+ hours of my personal time** to creating and maintaining this free and open-source workshop. If you can, please consider helping support this project by [sponsoring me on GitHub](https://github.com/sponsors/stefmolin), [buying me a coffee](https://www.buymeacoffee.com/stefanie.molin), or [supporting me on Ko-Fi](https://ko-fi.com/stefaniemolin).
+
 ## Abstract
 
 The human brain excels at finding patterns in visual representations, which is why data visualizations are essential to any analysis. Done right, they bridge the gap between those analyzing the data and those consuming the analysis. However, learning to create impactful, aesthetically-pleasing visualizations can often be challenging. This session will equip you with the skills to make customized visualizations for your data using Python.
@@ -41,7 +50,8 @@ Pick the installation option that makes sense for you:
 - [Cloud Service](#cloud-options)
 
 ### Local Installation
-**Warning**: It is highly recommended that you use your personal laptop for the installation.
+> [!WARNING]
+> It is highly recommended that you use your personal laptop for the installation.
 
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), if not already installed on your computer.
 
@@ -170,11 +180,15 @@ Depending on server availability, you can use [this](https://mybinder.org/v2/gh/
 ---
 
 ## About the Author
-Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a software engineer and data scientist at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around data wrangling/visualization, building tools for gathering data, and knowledge sharing. She is also the author of [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), which is currently in its second edition and has been translated into Korean. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science, as well as a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
+[![Github Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/stefmolin&style=flat)](https://github.com/sponsors/stefmolin)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-yellow?style=flat&logo=buymeacoffee&logoColor=white&labelColor=yellow&color=gray)
+](https://www.buymeacoffee.com/stefanie.molin)
+[![Ko-Fi](https://shields.io/badge/kofi-Support-ff5f5f?logo=ko-fi&style=flat)](https://ko-fi.com/stefaniemolin)
 
+Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a software engineer and data scientist at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around data wrangling/visualization, building tools for gathering data, and knowledge sharing. She is also the author of _[Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/)_, which is currently in its second edition and has been translated into Korean. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science, as well as a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
 
 ## Related Content
-All examples herein were developed exclusively for this workshop. [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/) contains additional examples and exercises, as does [this article](https://stefaniemolin.com/articles/data-science/how-to-pivot-and-plot-data-with-pandas/) and [this workshop](https://stefaniemolin.com/workshops/pandas-workshop/) on pandas.
+All examples herein were developed exclusively for this workshop. _[Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/)_ contains additional examples and exercises, as does [this article](https://stefaniemolin.com/articles/data-science/how-to-pivot-and-plot-data-with-pandas/) and [this workshop](https://stefaniemolin.com/workshops/pandas-workshop/) on pandas.
 
 ## License
 
